@@ -15,7 +15,7 @@ const RPulse =  () => {
   document.body.appendChild(canvas);
   const ctx = canvas.getContext("2d");
   window.onresize = resizeCanvas;
-  window.addEventListener('mousedown', mousePressed);
+  canvas.addEventListener('mousedown', mousePressed);
   resizeCanvas();
 
   rectSize = 30;
