@@ -2,7 +2,7 @@
 import Link            from "next/link";
 import { usePathname } from "next/navigation";
 import { useState }    from "react";
-
+import Image           from "next/image";
 
 
 type MenuProps = {
@@ -36,18 +36,8 @@ export const Navbar = () => {
   
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMenu, setIsMenu] = useState<string>('-translate-y-[200rem] h-2rem');
-  
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    if(isMenuOpen)
-    {
-      setIsMenu('translate-y-[0%] h-full');
-    }
-    else{
-      setIsMenu('-translate-y-[200rem]');
-    }
-  
     
   };
   
@@ -72,7 +62,8 @@ export const Navbar = () => {
             </svg>
           </button>
         </div>
-        <div className={`${isMenu} h-[2rem]  transition-all duration-300  items-center justify-between md:translate-y-[0%]  md:flex md:w-auto md:order-1" id="navbar-sticky`}>
+        
+        <div className={`hidden items-center justify-between  md:flex md:w-auto md:order-1`}>
           <ul
             className="flex flex-col p-3 gap-2 md:gap-0 md:flex-row md:space-x-8 md:mt-0 md:text-sm  md:bg-white">
             {
@@ -99,6 +90,47 @@ export const Navbar = () => {
           </div>
         </div>
       </div>
+      {
+        isMenuOpen && (
+          <div className={ isMenuOpen ? "p-4 absolute bg-white w-full top-0 right-0 z-20  transition duration-900 translate-x-0 md:hidden"
+              : "p-4 absolute bg-white w-full top-0 right-0 z-20 transition-all duration-500 translate-x-0  md:hidden"}>
+            <div className="float-right flex md:hidden md:order-2">
+              <button
+                onClick={toggleMenu}
+                className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none  focus:ring-gray-200">
+                <Image src={'/close.svg'} alt={'icon close'} height={20} width={20}/>
+              </button>
+            </div>
+            <div className={`transition-all duration-300  items-center justify-between md:hidden`}>
+              <ul
+                className="flex flex-col p-3 gap-2 md:gap-0 md:flex-row md:space-x-8 md:mt-0 md:text-sm  md:bg-white">
+                {
+                  menu.map((value: MenuProps, index: number) => {
+                    return (
+                      <li key={index}>
+                        <Link href={value.router}
+                              className={pathname == value.router ? "block font-semibold  text-[#e3363c]  rounded md:bg-transparent  hover:text-[#e3363c]"
+                                : "block font-semibold  text-black  rounded md:bg-transparent  hover:text-[#e3363c]"}
+                        >
+                          {value.name}
+                        </Link>
+                      </li>
+                    )
+                  })
+                }
+    
+              </ul>
+              <div className={' flex gap-3 md:ml-10 md:flex-row'}>
+                <Link href={'/login'}
+                      className=" w-full h-2rem p-2 flex font-light rounded  text-white md:justify-center md:p-2 md:w-[12rem] md:h-3rem bg-[#e3363c] ">
+                  Receba o nosso Survey
+                </Link>
+              </div>
+            </div>
+          </div>
+          
+        )
+      }
     </nav>
   
   )
