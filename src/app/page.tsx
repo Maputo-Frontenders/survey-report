@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowCircleDown } from "phosphor-react";
+import SubmitForm from '@/components/SubmitForm'
 
 import logoWhite from "../../public/images/logo-white.png";
 
@@ -53,6 +54,9 @@ export default function Home() {
             </div>
           </div>
           <div className="absolute z-10 bg-black/80 w-full h-full top-0 left-0"></div>
+        </section>
+        <section>
+          <SubmitForm />
         </section>
       </main>
     </>
