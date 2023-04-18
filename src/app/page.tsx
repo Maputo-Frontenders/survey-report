@@ -101,7 +101,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="absolute h-60 w-full bottom-0 left-0 backdrop-filter backdrop-blur-sm bg-gradient-to-b from-transparent to-[#060a35]"></div>
+              <div className="absolute h-60 w-full bottom-0 left-0 backdrop-filter backdrop-blur-[2px] bg-gradient-to-b from-transparent to-[#060a35]"></div>
             </div>
           </div>
         </section>
