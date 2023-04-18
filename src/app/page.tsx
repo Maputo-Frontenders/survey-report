@@ -14,8 +14,8 @@ export default function Home() {
     <>
       <NavBar />
       <main className='w-full h-full transition-all'>
-        <section className="relative min-h-screen w-full p-5 bg-hero bg-cover bg-fixed bg-right text-white">
-          <div className="relative z-20 mt-20 lg:mt-40 max-w-6xl mx-auto">
+        <section className="relative min-h-screen w-full p-5 py-10 bg-hero bg-cover bg-fixed bg-right text-white">
+          <div className="relative z-20 mt-20 lg:mt-36 max-w-6xl mx-auto">
             <Link href="/" className="relative -left-2">
               <Image
                 src={ logoWhite }
@@ -35,7 +35,7 @@ export default function Home() {
           </div>
           <div className="absolute z-10 bg-black/80 w-full h-full top-0 left-0"></div>
         </section>
-        <section className="relative min-h-screen w-full p-5 bg-about bg-cover bg-fixed bg-right text-white">
+        <section className="relative min-h-screen w-full p-5 py-10 bg-about bg-cover bg-fixed bg-right text-white">
           <div className="relative z-20 max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">
               Sobre
@@ -58,7 +58,7 @@ export default function Home() {
           </div>
           <div className="absolute z-10 bg-black/80 w-full h-full top-0 left-0"></div>
         </section>
-        <section className="w-full p-5 text-white relative">
+        <section className="w-full p-5 py-10 text-white relative">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-lg font-bold mb-6">LEARNING & EDUCATION</h2>
 
