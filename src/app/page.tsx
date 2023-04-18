@@ -7,10 +7,12 @@ import { ArrowCircleDown } from "phosphor-react";
 import logoWhite from "../../public/images/logo-white.png";
 import BarChart from "./components/charts/BarChart";
 import ColumnChart from "./components/charts/ColumnChart";
+import NavBar from "./components/NavBar";
 
 export default function Home() {
   return (
     <>
+      <NavBar />
       <main className='w-full h-full transition-all'>
         <section className="relative min-h-screen w-full p-5 bg-hero bg-cover bg-fixed bg-right text-white">
           <div className="relative z-20 mt-20 lg:mt-40 max-w-6xl mx-auto">
