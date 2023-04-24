@@ -17,6 +17,7 @@ export default function RootLayout({
       <Navbar/>
       {children}
       </body>
+      <body className='bg-[#060a35] overflow-x-hidden'>{children}</body>
     </html>
   )
 }
