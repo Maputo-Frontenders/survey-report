@@ -6,13 +6,17 @@ import { ArrowCircleDown } from "phosphor-react";
 import SubmitForm from '@/components/SubmitForm'
 
 import logoWhite from "../../public/images/logo-white.png";
+import BarChart from "./components/charts/BarChart";
+import ColumnChart from "./components/charts/ColumnChart";
+import NavBar from "./components/NavBar";
 
 export default function Home() {
   return (
     <>
+      <NavBar />
       <main className='w-full h-full transition-all'>
-        <section className="relative min-h-screen w-full p-5 bg-hero bg-cover bg-fixed bg-right text-white">
-          <div className="relative z-20 mt-20 lg:mt-40 max-w-6xl mx-auto">
+        <section className="relative min-h-screen w-full p-5 py-10 bg-hero bg-cover bg-fixed bg-right text-white">
+          <div className="relative z-20 mt-20 lg:mt-36 max-w-6xl mx-auto">
             <Link href="/" className="relative -left-2">
               <Image
                 src={ logoWhite }
@@ -32,7 +36,7 @@ export default function Home() {
           </div>
           <div className="absolute z-10 bg-black/80 w-full h-full top-0 left-0"></div>
         </section>
-        <section className="relative min-h-screen w-full p-5 bg-about bg-cover bg-fixed bg-right text-white">
+        <section className="relative min-h-screen w-full p-5 py-10 bg-about bg-cover bg-fixed bg-right text-white">
           <div className="relative z-20 max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">
               Sobre
@@ -54,6 +58,55 @@ export default function Home() {
             </div>
           </div>
           <div className="absolute z-10 bg-black/80 w-full h-full top-0 left-0"></div>
+        </section>
+        <section className="w-full p-5 py-10 text-white relative">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-lg font-bold mb-6">LEARNING & EDUCATION</h2>
+
+            <div className="flex flex-col w-full gap-20">
+              <div className="flex justify-center  lg:justify-between flex-wrap gap-10">
+                <div className="max-w-md flex flex-col gap-4">
+                  <h3 className="text-4xl font-bold mb-6">For learning to code, C is overtaking BASIC</h3>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi magni voluptatibus quibusdam repellat dolorum, incidunt ullam commodi minima ut tempora beatae, laborum eum cum ipsam molestias nisi facere eius illo.</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi magni voluptatibus quibusdam repellat dolorum, incidunt ullam commodi minima ut tempora beatae, laborum eum cum ipsam molestias nisi facere eius illo.</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi magni voluptatibus quibusdam repellat dolorum, incidunt ullam commodi minima ut tempora beatae, laborum eum cum ipsam molestias nisi facere eius illo.</p>
+                </div>
+                <div className="flex flex-col gap-4 max-w-lg w-full">
+                  <h4 className="text-2xl font-normal mb-6">What was the first language you learned to code in?</h4>
+                  <ColumnChart data={{
+                    series: [{
+                      name: 'Percentagem das pessoas',
+                      data: [8, 55, 57, 56, 45, 55, 12, 32]
+                    }],
+                    categories: ["C", "Python", "Java", "C#", "PHP", "Go", "C++", "JavaScript"]
+                  }} />
+                </div>
+              </div>
+
+              <div className="flex justify-center  lg:justify-between flex-wrap gap-10">
+                <div className="max-w-md flex flex-col gap-4">
+                  <h3 className="text-4xl font-bold mb-6">Gen Z utilizes bootcamps to learn new skills</h3>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi magni voluptatibus quibusdam repellat dolorum, incidunt ullam commodi minima ut tempora beatae, laborum eum cum ipsam molestias nisi facere eius illo.</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi magni voluptatibus quibusdam repellat dolorum, incidunt ullam commodi minima ut tempora beatae, laborum eum cum ipsam molestias nisi facere eius illo.</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi magni voluptatibus quibusdam repellat dolorum, incidunt ullam commodi minima ut tempora beatae, laborum eum cum ipsam molestias nisi facere eius illo.</p>
+                </div>
+
+                <div className="flex flex-col gap-4 max-w-lg w-full">
+                  <h4 className="text-2xl font-normal mb-6">How do you learn new coding skills?</h4>
+
+                  <BarChart data={{
+                    series: [{
+                      name: 'Percentagem das pessoas',
+                      data: [8, 55, 57, 56, 45, 55, 12, 32]
+                    }],
+                    categories: ["Youtube", "Medium", "Geek for Geeks", "Udemy", "Linked Learning", "Documentação", "Livros", "Não aprendo"]
+                  }} />
+                </div>
+              </div>
+
+              <div className="absolute h-60 w-full bottom-0 left-0 backdrop-filter backdrop-blur-[2px] bg-gradient-to-b from-transparent to-[#060a35]"></div>
+            </div>
+          </div>
         </section>
         <section>
           <SubmitForm />
