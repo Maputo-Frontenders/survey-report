@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { useForm, FieldValues } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 
@@ -14,27 +14,28 @@ const submitFormDataSchema = z.object({
 	province: z.string().nonempty('Selecione a província!'),
 })
 
-type SubmitFormData = z.infer<submitFormDataSchema>
-
+type SubmitFormData = z.infer<typeof submitFormDataSchema>
 const style = {
-	main:"flex flex-col text-center  w-[250px] opacity-50",
+	main: "flex flex-col text-center  w-[250px] opacity-50",
 	label: "",
 	input: "p-2 text-center w-[250px] bg-blue-100 outline-none text-black"
 }
 
 const SubmitForm: React.FC = () => {
-	const { register, handleSubmit, formState: { errors } } = useForm({
+	const { register, handleSubmit, formState: { errors }, reset } = useForm({
 		resolver: zodResolver(submitFormDataSchema)
 	})
-  
 
-	const sendPDF = (data: SubmitFormData) => {
-    console.log("data:", data)
+
+	const sendPDF = (data: any): void => {
+		console.log("data:", data)
+		reset()
+		window.alert('Check o seu email.')
 	}
 
 	return (
 		<div className="flex justify-center items-center w-screen flex-col">
-            <p className="text-white p-2">Preencha o formulário para receber o resultado da survey por e-mail.</p>
+			<p className="text-white p-2">Preencha o formulário para receber o resultado da survey por e-mail.</p>
 			<form
 				onSubmit={handleSubmit(sendPDF)}
 				className="p-4 w-[100vw] max-w-[600px] flex flex-col md:flex-row md:flex-wrap gap-4 bg-white justify-center items-center py-7 pt-12 "
@@ -42,30 +43,30 @@ const SubmitForm: React.FC = () => {
 				<div className="gap-6 flex flex-col">
 					<div className={style.main}>
 						<label className={style.label}>E-mail</label>
-						<input className={style.input} {...register('email')}/>
-						{ errors?.email && (<span className="text-red-700">{errors.email.message}</span>)}
+						<input className={style.input} {...register('email')} />
+						{errors?.email && (<span className="text-red-700">{`${errors.email.message}`}</span>)}
 					</div>
 					<div className={style.main}>
 						<label className={style.label}>Primeiro Nome</label>
-						<input className={style.input} {...register('firstName')}/>
-            { errors?.firstName && (<span className="text-red-700">{errors.firstName.message}</span>)}
+						<input className={style.input} {...register('firstName')} />
+						{errors?.firstName && (<span className="text-red-700">{`${errors.firstName.message}`}</span>)}
 					</div>
 					<div className={style.main}>
 						<label className={style.label}>Ultimo Nome</label>
-						<input className={style.input} {...register('lastName')}/>
-            { errors?.lastName && (<span className="text-red-700">{errors.lastName.message}</span>)}
+						<input className={style.input} {...register('lastName')} />
+						{errors?.lastName && (<span className="text-red-700">{`${errors?.lastName.message}`}</span>)}
 					</div>
 				</div>
 				<div className="gap-6 flex flex-col">
 					<div className={style.main}>
 						<label className={style.label}>Nome da Empresa</label>
 						<input className={style.input} {...register('companyName')}/>
-            { errors?.companyName && (<span className="text-red-700">{errors.companyName.message}</span>)}
+            { errors?.companyName && (<span className="text-red-700">{`${errors.companyName.message}`}</span>)}
 					</div>
 					<div className={style.main}>
 						<label className={style.label}>Titulo do cargo</label>
 						<input className={style.input} {...register('jobTitle')}/>
-            { errors?.jobTitle && (<span className="text-red-700">{errors.jobTitle.message}</span>)}
+            { errors?.jobTitle && (<span className="text-red-700">{`${errors.jobTitle.message}`}</span>)}
 					</div>
 					<div className={style.main}>
 						<label className={style.label}>Província</label>
@@ -83,7 +84,7 @@ const SubmitForm: React.FC = () => {
                 <option value="Tete">Tete</option>
                 <option value="Zambézia">Zambézia</option>
 		        	</select>
-              { errors?.province && (<span className="text-red-700">{errors.province.message}</span>)}
+              { errors?.province && (<span className="text-red-700">{`${errors.province.message}`}</span>)}
 					</div>
 				</div>
 				<input 
