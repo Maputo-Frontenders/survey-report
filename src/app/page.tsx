@@ -1,20 +1,22 @@
 "use client"
 
-import Image               from "next/image";
-import Link                from "next/link";
+import Image from "next/image";
+import Link from "next/link";
 import { ArrowCircleDown } from "phosphor-react";
-import SubmitForm from '@/components/SubmitForm'
 
-import logoWhite   from "../../public/images/logo-white.png";
-import BarChart    from "./components/charts/BarChart";
-import ColumnChart from "./components/charts/ColumnChart";
-import NavBar      from "./components/NavBar";
-import Footer      from "@/app/components/Footer";
+import NavBar from "@/app/components/NavBar";
+import BarChart from "@/app/components/charts/BarChart";
+import ColumnChart from "@/app/components/charts/ColumnChart";
+import SubmitForm from '@/app/components/SubmitForm'
+import Footer from "@/app/components/Footer";
+
+import logoWhite from "../../public/images/logo-white.png";
 
 export default function Home() {
   return (
     <>
       <NavBar/>
+
       <main className='w-full h-full transition-all'>
         <section className="relative min-h-screen w-full p-5 py-10 bg-hero bg-cover bg-fixed bg-right text-white">
           <div className="relative z-20 mt-20 lg:mt-36 max-w-6xl mx-auto">
@@ -38,6 +40,7 @@ export default function Home() {
           </div>
           <div className="absolute z-10 bg-black/80 w-full h-full top-0 left-0"></div>
         </section>
+
         <section className="relative min-h-screen w-full p-5 py-10 bg-about bg-cover bg-fixed bg-right text-white">
           <div className="relative z-20 max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">
@@ -79,6 +82,7 @@ export default function Home() {
           </div>
           <div className="absolute z-10 bg-black/80 w-full h-full top-0 left-0"></div>
         </section>
+
         <section className="w-full p-5 py-10 text-white relative">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-lg font-bold mb-6">LEARNING & EDUCATION</h2>
@@ -141,10 +145,12 @@ export default function Home() {
             </div>
           </div>
         </section>
+
         <section>
           <SubmitForm />
         </section>
       </main>
+
       <Footer/>
     </>
   )
