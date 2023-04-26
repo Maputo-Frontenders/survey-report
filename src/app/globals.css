@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.apexcharts-canvas {
+  @apply !w-full
+}
