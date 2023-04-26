@@ -10,6 +10,9 @@ module.exports = {
       backgroundImage: {
         "hero": "url('/images/hero.jpg')",
         "about": "url('/images/about.jpg')",
+      },
+      colors: {
+        "primary": "#060a35",
       }
     },
   },
