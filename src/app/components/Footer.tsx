@@ -7,7 +7,7 @@ const Footer = () => {
     <>
       <footer className="bg-white">
         <div className="mx-auto max-w-6xl p-5 py-10">
-          <div className="flex flex-wrap w-full justify-between gap-6">
+          <div className="grid grid-cols-2 md:flex md:flex-wrap w-full justify-between gap-6">
             <div>
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Company</h2>
               <ul className="text-gray-500  font-medium">
