@@ -1,12 +1,14 @@
-'use client' // this is a client component
+'use client';
 
-import { useEffect, useState } from 'react'
-import { List, X } from 'phosphor-react'
-import Image from 'next/image'
-import logo from "../../../public/images/logo.png";
-import logoWhite from "../../../public/images/logo-white.png";
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { List, X } from 'phosphor-react';
+
 import ActiveLink from './ActiveLink';
 import Link from 'next/link';
+
+import logo from "../../../public/images/logo.png";
+import logoWhite from "../../../public/images/logo-white.png";
 
 const menuItems = [
   { name: "Home", href: "/" },
@@ -14,13 +16,13 @@ const menuItems = [
 ]
 
 const NavBar: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [scrollY, setScrollY] = useState(0)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     document.querySelector('body')?.classList.remove('overflow-y-hidden')
     window.addEventListener('scroll', () => {
-      setScrollY(window.scrollY)
+      setScrollY(window.scrollY);
     })
   }, [])
 

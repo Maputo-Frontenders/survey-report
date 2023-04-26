@@ -1,4 +1,4 @@
-'use client' // this is a client component
+'use client';
 
 import Link, { LinkProps } from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -10,7 +10,7 @@ interface ActiveLinkProps extends LinkProps {
 }
 
 const ActiveLink:React.FC<ActiveLinkProps> = ({ href, children, activeClassName, className, ...props }) => {
-  const isActive = usePathname( )=== href;
+  const isActive = usePathname() === href;
 
   return (
     <Link href={href} className={`${className} ` + `${ isActive ? activeClassName : "" }` } {...props}>

@@ -1,4 +1,4 @@
-import dynamic from 'next/dynamic'
+import dynamic from 'next/dynamic';
 import { ApexOptions } from "apexcharts";
 
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false });
