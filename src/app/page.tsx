@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowCircleDown } from "phosphor-react";
+import SubmitForm from '@/components/SubmitForm'
 
 import logoWhite from "../../public/images/logo-white.png";
 import BarChart from "./components/charts/BarChart";
@@ -106,6 +107,9 @@ export default function Home() {
               <div className="absolute h-60 w-full bottom-0 left-0 backdrop-filter backdrop-blur-[2px] bg-gradient-to-b from-transparent to-[#060a35]"></div>
             </div>
           </div>
+        </section>
+        <section>
+          <SubmitForm />
         </section>
       </main>
     </>
