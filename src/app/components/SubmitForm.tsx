@@ -21,6 +21,10 @@ const style = {
 	input: "border-b border-gray-500 group-focus-within:border-primary p-2 text-center w-full lg:max-w-[250px] bg-white outline-none text-black"
 }
 
+const handleSelect = ($event: any) => {
+	console.log($event)
+}
+
 const SubmitForm: React.FC = () => {
 	const { register, handleSubmit, formState: { errors }, reset } = useForm({
 		resolver: zodResolver(submitFormDataSchema)
@@ -69,20 +73,21 @@ const SubmitForm: React.FC = () => {
 					<div className={style.main}>
 						<label className={style.label}>Província</label>
 						<select className={style.input} {...register('province')}>
-													<option ></option>
-													<option value="Cabo Delegado">Cabo Delegado</option>
-													<option value="Gaza">Gaza</option>
-													<option value="Inhambane">Inhambane</option>
-													<option value="Manica">Manica</option>
-													<option value="Maputo Cidade">Maputo Cidade</option>
-													<option value="Maputo Provincia">Maputo Província</option>
-													<option value="Nampula">Nampula</option>
-													<option value="Niassa">Niassa</option>
-													<option value="Sofala">Sofala</option>
-													<option value="Tete">Tete</option>
-													<option value="Zambézia">Zambézia</option>
-												</select>
-												{ errors?.province && (<span className="text-red-700">{`${errors.province.message}`}</span>)}
+							<option ></option>
+							<option value="Cabo Delegado">Cabo Delegado</option>
+							<option value="Gaza">Gaza</option>
+							<option value="Inhambane">Inhambane</option>
+							<option value="Manica">Manica</option>
+							<option value="Maputo Cidade">Maputo Cidade</option>
+							<option value="Maputo Provincia">Maputo Província</option>
+							<option value="Nampula">Nampula</option>
+							<option value="Niassa">Niassa</option>
+							<option value="Sofala">Sofala</option>
+							<option value="Tete">Tete</option>
+							<option value="Zambézia">Zambézia</option>
+							<option value="others" onSelect={($event) => handleSelect($event)}>Outros</option>
+						</select>
+						{ errors?.province && (<span className="text-red-700">{`${errors.province.message}`}</span>)}
 					</div>
 				</div>
 
