@@ -15,6 +15,7 @@ export default function CountryModal({
   };
 
   const [countries, setCountries] = React.useState<any>();
+  const [search, setSearch] = React.useState("");
 
   const style = {
     position: "absolute" as "absolute",
@@ -22,10 +23,24 @@ export default function CountryModal({
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: 600,
+    overflow: "scroll",
     bgcolor: "background.paper",
     border: "2px solid #000",
     boxShadow: 24,
     p: 4,
+  };
+
+  const handleKeyDown = (event: { key: string }) => {
+    if (event.key === "Enter") {
+      const filtered = countries.filter((elements: any) => {
+        const name = elements.name.common;
+        if (name.toLowerCase().includes(search.toLowerCase())) {
+          return elements;
+        }
+      });
+      setCountries(filtered);
+      console.log(filtered);
+    }
   };
 
   useEffect(() => {
@@ -45,22 +60,24 @@ export default function CountryModal({
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <div>
+          <div className="max-h-[20rem]">
             <div className="flex items-center gap-10">
               <span>icon</span>
               <input
                 className="h-10 w-full p-5 outline-none  border-b-2 border-gray-500"
                 type="text"
                 placeholder="Pesquise o seu pais "
+                onChange={(e) => setSearch(e.target.value)}
+                onKeyDown={handleKeyDown}
               />
             </div>
             <div>
               <div>
                 <span>Resultado</span>
               </div>
-              <div>
+              <div className="grid grid-cols-2 gap-5">
                 {countries?.map((country: any, index: number) => [
-                  <div key={index}>
+                  <button key={index} className="flex items-center gap-5 ">
                     <div>
                       <Image
                         src={country.flags.svg}
@@ -70,9 +87,9 @@ export default function CountryModal({
                       />
                     </div>
                     <div>
-                      <p>{country.name}helloo</p>
+                      <p>{country.name.common}</p>
                     </div>
-                  </div>,
+                  </button>,
                 ])}
               </div>
             </div>
