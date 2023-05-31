@@ -52,15 +52,6 @@ const NavBar: React.FC = () => {
 
           <div className="w-full flex gap-10 justify-end items-center">
             <nav className="flex gap-10">
-              <select
-                id="countries"
-                className="bg-transparent  outline-none text-sm rounded-lg  block w-full p-2.5 "
-              >
-                <option value="US" selected>
-                  English
-                </option>
-                <option value="PT">Portuguese</option>
-              </select>
               <ul className="flex items-center gap-5 text-sm">
                 {menuItems.map((menuItem) => {
                   return (
