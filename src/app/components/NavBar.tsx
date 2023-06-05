@@ -18,6 +18,14 @@ const menuItems = [
 const NavBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const languange = [
+    {
+      name: "Português",
+    },
+    {
+      name: "English",
+    },
+  ];
 
   useEffect(() => {
     document.querySelector("body")?.classList.remove("overflow-y-hidden");
@@ -52,6 +60,15 @@ const NavBar: React.FC = () => {
 
           <div className="w-full flex gap-10 justify-end items-center">
             <nav className="flex gap-10">
+              <select className="bg-transparent  outline-none text-sm rounded-lg  block w-full p-2.5 ">
+                {languange.map((lang) => {
+                  return (
+                    <option key={lang.name} value={lang.name}>
+                      {lang.name}
+                    </option>
+                  );
+                })}
+              </select>
               <ul className="flex items-center gap-5 text-sm">
                 {menuItems.map((menuItem) => {
                   return (
