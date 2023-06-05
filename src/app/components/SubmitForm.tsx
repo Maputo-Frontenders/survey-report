@@ -21,11 +21,11 @@ const submitFormDataSchema = z.object({
     .string()
     .nonempty("O último nome é obrigatório.")
     .min(3, "No mínimo 3 caracteres."),
-  companyName: z
+  companyOrUniversityName: z
     .string()
     .nonempty("Nome da empresa é obrigatório.")
     .min(5, "No mínimo 5 caracteres."),
-  jobTitle: z
+  jobOrCourseTitle: z
     .string()
     .nonempty("Título do cargo é obrigatório")
     .min(5, "No mínimo 5 caracteres."),
@@ -85,41 +85,42 @@ const SubmitForm: React.FC = () => {
             )}
           </div>
           <div className={style.main}>
-            <label className={style.label}>Primeiro Nome</label>
+            <label className={style.label}>Nome</label>
             <input className={style.input} {...register("firstName")} />
             {errors?.firstName && (
               <span className="text-red-700">{`${errors.firstName.message}`}</span>
             )}
           </div>
           <div className={style.main}>
-            <label className={style.label}>Ultimo Nome</label>
+            <label className={style.label}>Apelido</label>
             <input className={style.input} {...register("lastName")} />
             {errors?.lastName && (
               <span className="text-red-700">{`${errors?.lastName.message}`}</span>
             )}
           </div>
           <div className={style.main}>
-            <label className={style.label}>Nome da Empresa</label>
-            <input className={style.input} {...register("companyName")} />
-            {errors?.companyName && (
-              <span className="text-red-700">{`${errors.companyName.message}`}</span>
+            <label className={style.label}>Nome da Empresa / Universidade</label>
+            <input className={style.input} {...register("companyOrUniversityName")} />
+            {errors?.companyOrUniversityName && (
+              <span className="text-red-700">{`${errors.companyOrUniversityName.message}`}</span>
             )}
           </div>
           <div className={style.main}>
-            <label className={style.label}>Titulo do cargo</label>
-            <input className={style.input} {...register("jobTitle")} />
-            {errors?.jobTitle && (
-              <span className="text-red-700">{`${errors.jobTitle.message}`}</span>
+            <label className={style.label}>Título do cargo / Curso</label>
+            <input className={style.input} {...register("jobOrCourseTitle")} />
+            {errors?.jobOrCourseTitle && (
+              <span className="text-red-700">{`${errors.jobOrCourseTitle.message}`}</span>
             )}
           </div>
           <div className={style.main}>
-            <label className={style.label}>Província</label>
+            <label className={style.label}>Província / País</label>
             <select
+              id="select"
               className={style.input}
               {...register("province")}
               onChange={handleSelect}
             >
-              <option></option>
+              <option id="country"></option>
               <option value="Cabo Delegado">Cabo Delegado</option>
               <option value="Gaza">Gaza</option>
               <option value="Inhambane">Inhambane</option>
