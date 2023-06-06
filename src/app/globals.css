@@ -5,3 +5,7 @@
 .apexcharts-canvas {
   @apply !w-full
 }
+
+*{
+  scroll-behavior: smooth;
+}
