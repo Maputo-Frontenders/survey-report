@@ -144,7 +144,7 @@ const SubmitForm: React.FC = () => {
           <input
             type="submit"
             value="Receber Resultados"
-            className="bg-green-500 p-4 text-white font-medium rounded cursor-pointer"
+            className="bg-[#A9282D] p-4 text-white font-medium rounded cursor-pointer"
           />
         </div>
         <div>
