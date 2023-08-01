@@ -65,7 +65,7 @@ const SubmitForm: React.FC = () => {
 
   return (
     <div
-      className="flex justify-center items-center w-screen flex-col p-5 mb-20"
+      className="flex justify-center items-center w-screen flex-col p-5 mb-20 pt-[200px]"
       id="form"
     >
       <p className="text-white mb-5">
@@ -144,7 +144,7 @@ const SubmitForm: React.FC = () => {
           <input
             type="submit"
             value="Receber Resultados"
-            className="bg-green-500 p-4 text-white font-medium rounded cursor-pointer"
+            className="bg-[#A9282D] p-4 text-white font-medium rounded cursor-pointer"
           />
         </div>
         <div>
