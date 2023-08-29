@@ -42,6 +42,7 @@ const style = {
 
 const SubmitForm: React.FC = () => {
   const [visible, setVisible] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -60,7 +61,7 @@ const SubmitForm: React.FC = () => {
   const handleSelect = ($event: any) => {
     if ($event.target.value === "others") {
       setVisible(true);
-    }
+    };
   };
 
   return (
@@ -68,13 +69,9 @@ const SubmitForm: React.FC = () => {
       className="flex justify-center items-center w-screen flex-col p-5 mb-20 pt-[200px]"
       id="form"
     >
-      <p className="text-white mb-5">
-        Preencha o formulário para receber o resultado da survey por e-mail.
-      </p>
-
       <form
         onSubmit={handleSubmit(sendPDF)}
-        className="p-4 w-full max-w-[600px] bg-white py-7 pt-12 rounded"
+        className="p-4 w-full max-w-2xl bg-white py-7 pt-12 rounded"
       >
         <div className="flex gap-10 flex-wrap justify-center">
           <div className={style.main}>
@@ -99,7 +96,7 @@ const SubmitForm: React.FC = () => {
             )}
           </div>
           <div className={style.main}>
-            <label className={style.label}>Nome da Empresa / Universidade</label>
+            <label className={style.label}>Nome da Instituição</label>
             <input className={style.input} {...register("companyOrUniversityName")} />
             {errors?.companyOrUniversityName && (
               <span className="text-red-700">{`${errors.companyOrUniversityName.message}`}</span>

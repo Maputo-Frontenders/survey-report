@@ -1,4 +1,4 @@
-import './globals.css'
+import './globals.css';
 
 export const metadata = {
   title: 'MozDevz Survey Report',
@@ -11,9 +11,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className='bg-[#060a35] overflow-x-hidden'>
-        {children}
+    <html lang="pt-pt">
+      <body className='bg-home overflow-x-hidden'>
+        { children }
       </body>
     </html>
   )

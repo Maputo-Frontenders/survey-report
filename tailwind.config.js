@@ -10,6 +10,7 @@ module.exports = {
       backgroundImage: {
         "hero": "url('/images/hero.jpg')",
         "about": "url('/images/about.jpg')",
+        "home": "linear-gradient(to bottom, #060a35, #28318a)"
       },
       colors: {
         "primary": "#060a35",

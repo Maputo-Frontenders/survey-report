@@ -7,12 +7,10 @@ import { List, X } from "phosphor-react";
 import ActiveLink from "./ActiveLink";
 import Link from "next/link";
 
-import logo from "../../../public/images/logo.png";
-import logoWhite from "../../../public/images/logo-white.png";
 
 const menuItems = [
-  { name: "Home", href: "/" },
-  { name: "Sobre", href: "/#about" },
+  { name: "Home", href: "#home" },
+  { name: "Sobre", href: "#about" },
 ];
 
 const NavBar: React.FC = () => {
@@ -36,7 +34,7 @@ const NavBar: React.FC = () => {
 
   return (
     <header
-      className={`transition-colors duration-700 fixed z-50 right-0 left-0 top-0 ${
+      className={`p-5 transition-colors duration-700 fixed z-50 right-0 left-0 top-0 ${
         scrollY > 200 ? "text-black bg-white shadow" : "text-white"
       }`}
     >
@@ -46,13 +44,14 @@ const NavBar: React.FC = () => {
         }`}
       ></div>
 
-      <div className="max-w-7xl mx-auto p-5">
+      <div className="max-w-6xl mx-auto">
         <div className="hidden items-center justify-between lg:flex">
           <div className="flex items-center gap-8">
             <Link href="/" className="text-2xl font-bold block">
               <Image
-                src={scrollY > 200 ? logo : logoWhite}
+                src={`/images/${ scrollY > 200 ? "logo.png" : "logo-white.png" }`}
                 width={130}
+                height={130 }
                 alt="Mozdevz - Comunidade Moçambicana de Desenvolvedores"
               />
             </Link>
@@ -73,13 +72,12 @@ const NavBar: React.FC = () => {
                 {menuItems.map((menuItem) => {
                   return (
                     <li key={menuItem.href}>
-                      <ActiveLink
-                        href={menuItem.href}
+                      <Link
+                        href={ menuItem.href }
                         className="font-bold hover:text-red-500 transition-colors"
-                        activeClassName="text-red-500"
                       >
-                        {menuItem.name}
-                      </ActiveLink>
+                        { menuItem.name }
+                      </Link>
                     </li>
                   );
                 })}
@@ -91,8 +89,9 @@ const NavBar: React.FC = () => {
         <div className="flex justify-between lg:hidden">
           <Link href="/" className="text-2xl font-bold block">
             <Image
-              src={scrollY > 200 ? logo : logoWhite}
+              src={`/images/${ scrollY > 200 ? "logo.png" : "logo-white.png" }`}
               width={130}
+              height={130}
               alt="Mozdevz - Comunidade Moçambicana de Desenvolvedores"
             />
           </Link>
@@ -117,8 +116,9 @@ const NavBar: React.FC = () => {
               <div className="flex gap-3 justify-between items-center">
                 <Link href="/" className="text-2xl font-bold block">
                   <Image
-                    src={logo}
+                    src={ "/images/logo.png" }
                     width={130}
+                    height={130}
                     alt="Mozdevz - Comunidade Moçambicana de Desenvolvedores"
                   />
                 </Link>
@@ -140,13 +140,12 @@ const NavBar: React.FC = () => {
                   {menuItems.map((menuItem) => {
                     return (
                       <li key={menuItem.href}>
-                        <ActiveLink
+                        <Link
                           href={menuItem.href}
                           className="font-bold hover:text-red-500 transition-colors"
-                          activeClassName="text-red-500"
                         >
                           {menuItem.name}
-                        </ActiveLink>
+                        </Link>
                       </li>
                     );
                   })}
