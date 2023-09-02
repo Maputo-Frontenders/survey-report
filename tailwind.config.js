@@ -8,14 +8,14 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "hero": "url('/images/hero.jpg')",
-        "about": "url('/images/about.jpg')",
-        "home": "linear-gradient(to bottom, #060a35, #28318a)"
+        hero: "url('/images/hero.jpg')",
+        about: "url('/images/about.jpg')",
+        home: "linear-gradient(to bottom, #07090a, #28318a)",
       },
       colors: {
-        "primary": "#060a35",
-      }
+        primary: "#07090a",
+      },
     },
   },
   plugins: [],
-}
+};

@@ -1,9 +1,11 @@
 "use client";
 
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 import { ApexOptions } from "apexcharts";
 
-const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false });
+const ReactApexChart = dynamic(() => import("react-apexcharts"), {
+  ssr: false,
+});
 
 const BarChart: React.FC<{ data: any }> = ({ data }) => {
   const options: ApexOptions = {
@@ -11,7 +13,7 @@ const BarChart: React.FC<{ data: any }> = ({ data }) => {
     chart: {
       toolbar: {
         show: false,
-      }
+      },
     },
     plotOptions: {
       bar: {
@@ -20,40 +22,40 @@ const BarChart: React.FC<{ data: any }> = ({ data }) => {
       },
     },
     dataLabels: {
-      enabled: false
+      enabled: false,
     },
     xaxis: {
       categories: data?.categories,
       labels: {
         style: {
           colors: "#fff",
-        }
-      }
+        },
+      },
     },
     yaxis: {
       labels: {
         style: {
           colors: "#fff",
-          fontSize: "0.8rem"
-        }
-      }
+          fontSize: "0.8rem",
+        },
+      },
     },
     tooltip: {
       y: {
         formatter: function (val) {
-          return `${val}`
-        }
+          return `${val}`;
+        },
       },
-      cssClass: "text-black"
+      cssClass: "text-black",
     },
-    colors: ["#A9282D"]
-  }
-  
+    colors: ["#e2363c"],
+  };
+
   return (
-    <div className='w-full'>
+    <div className="w-full">
       {<ReactApexChart options={options} series={options.series} type="bar" />}
     </div>
-  )
-}
+  );
+};
 
 export default BarChart;

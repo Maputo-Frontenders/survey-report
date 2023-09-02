@@ -61,7 +61,7 @@ const SubmitForm: React.FC = () => {
   const handleSelect = ($event: any) => {
     if ($event.target.value === "others") {
       setVisible(true);
-    };
+    }
   };
 
   return (
@@ -69,6 +69,9 @@ const SubmitForm: React.FC = () => {
       className="flex justify-center items-center w-screen flex-col p-5 mb-20 pt-[200px]"
       id="form"
     >
+      <h2 className="text-white text-xl mb-10 text-center">
+        Preencha o Formulário para Acessar os Resultados da Pesquisa
+      </h2>
       <form
         onSubmit={handleSubmit(sendPDF)}
         className="p-4 w-full max-w-2xl bg-white py-7 pt-12 rounded"
@@ -97,7 +100,10 @@ const SubmitForm: React.FC = () => {
           </div>
           <div className={style.main}>
             <label className={style.label}>Nome da Instituição</label>
-            <input className={style.input} {...register("companyOrUniversityName")} />
+            <input
+              className={style.input}
+              {...register("companyOrUniversityName")}
+            />
             {errors?.companyOrUniversityName && (
               <span className="text-red-700">{`${errors.companyOrUniversityName.message}`}</span>
             )}
@@ -141,7 +147,7 @@ const SubmitForm: React.FC = () => {
           <input
             type="submit"
             value="Receber Resultados"
-            className="bg-[#A9282D] p-4 text-white font-medium rounded cursor-pointer"
+            className="bg-[#e2363c] p-4 text-white font-medium rounded cursor-pointer"
           />
         </div>
         <div>

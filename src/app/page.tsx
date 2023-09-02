@@ -9,27 +9,28 @@ import DownloadButton from "@/components/DownloadButton";
 export default function Home() {
   return (
     <>
-      { <NavBar /> }
+      {<NavBar />}
 
       <main className="w-full h-full transition-all">
-        <section id="home" className="relative min-h-screen w-full p-5 py-10 bg-hero bg-cover bg-fixed bg-right text-white">
+        <section
+          id="home"
+          className="relative min-h-screen w-full p-5 py-10 bg-hero bg-cover bg-fixed bg-right text-white"
+        >
           <div className="relative z-20 mt-20 lg:mt-36 max-w-6xl mx-auto">
-            <h1 className="text-5xl lg:text-6xl text mt-14 lg:mt-2">
-              2023 Developer <br />
-              Skills Report
+            <h1 className="text-5xl my-10 font-semibold lg:text-6xl text mt-14 lg:mt-2">
+              Mozambique Developer <br />
+              Survey
             </h1>
-
-            <p className="my-10">
-              Resultados baseados em <br />
-              <strong>34,000 Desenvolvedores</strong>
-            </p>
 
             <DownloadButton />
           </div>
           <div className="absolute z-10 bg-black/80 w-full h-full top-0 left-0"></div>
         </section>
 
-        <section id="about" className="relative min-h-screen w-full p-5 py-10 text-white">
+        <section
+          id="about"
+          className="relative min-h-screen w-full p-5 py-10 text-white"
+        >
           <div className="relative z-20 max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Sobre</h2>
             <div className="w-full flex flex-wrap gap-10 justify-between">
