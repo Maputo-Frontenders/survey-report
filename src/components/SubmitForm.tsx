@@ -42,6 +42,7 @@ const style = {
 
 const SubmitForm: React.FC = () => {
   const [visible, setVisible] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -51,9 +52,17 @@ const SubmitForm: React.FC = () => {
     resolver: zodResolver(submitFormDataSchema),
   });
 
-  const sendPDF = (data: any): void => {
-    console.log("data:", data);
-    reset();
+  const sendPDF = async (data: any) => {
+    const res = await fetch("/api/sendEmail", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify(data)
+    });
+
+    console.log(res);
+    //reset();
     window.alert("Check o seu email.");
   };
 
@@ -68,13 +77,12 @@ const SubmitForm: React.FC = () => {
       className="flex justify-center items-center w-screen flex-col p-5 mb-20 pt-[200px]"
       id="form"
     >
-      <p className="text-white mb-5">
-        Preencha o formulário para receber o resultado da survey por e-mail.
-      </p>
-
+      <h2 className="text-white text-xl mb-10 text-center">
+        Preencha o Formulário para Acessar os Resultados da Pesquisa
+      </h2>
       <form
         onSubmit={handleSubmit(sendPDF)}
-        className="p-4 w-full max-w-[600px] bg-white py-7 pt-12 rounded"
+        className="p-4 w-full max-w-2xl bg-white py-7 pt-12 rounded"
       >
         <div className="flex gap-10 flex-wrap justify-center">
           <div className={style.main}>
@@ -99,8 +107,11 @@ const SubmitForm: React.FC = () => {
             )}
           </div>
           <div className={style.main}>
-            <label className={style.label}>Nome da Empresa / Universidade</label>
-            <input className={style.input} {...register("companyOrUniversityName")} />
+            <label className={style.label}>Nome da Instituição</label>
+            <input
+              className={style.input}
+              {...register("companyOrUniversityName")}
+            />
             {errors?.companyOrUniversityName && (
               <span className="text-red-700">{`${errors.companyOrUniversityName.message}`}</span>
             )}
@@ -144,7 +155,7 @@ const SubmitForm: React.FC = () => {
           <input
             type="submit"
             value="Receber Resultados"
-            className="bg-[#A9282D] p-4 text-white font-medium rounded cursor-pointer"
+            className="bg-[#e2363c] p-4 text-white font-medium rounded cursor-pointer"
           />
         </div>
         <div>

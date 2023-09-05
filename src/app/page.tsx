@@ -1,55 +1,36 @@
-"use client";
+import NavBar from "@/components/NavBar";
 
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowCircleDown } from "phosphor-react";
-
-import NavBar from "@/app/components/NavBar";
-import BarChart from "@/app/components/charts/BarChart";
-import ColumnChart from "@/app/components/charts/ColumnChart";
-import SubmitForm from "@/app/components/SubmitForm";
-import Footer from "@/app/components/Footer";
-
-import logoWhite from "../../public/images/logo-white.png";
+import BarChart from "@/components/charts/BarChart";
+import ColumnChart from "@/components/charts/ColumnChart";
+import SubmitForm from "@/components/SubmitForm";
+import Footer from "@/components/Footer";
+import DownloadButton from "@/components/DownloadButton";
 
 export default function Home() {
   return (
     <>
-      <NavBar />
+      {<NavBar />}
 
       <main className="w-full h-full transition-all">
-        <section className="relative min-h-screen w-full p-5 py-10 bg-hero bg-cover bg-fixed bg-right text-white">
+        <section
+          id="home"
+          className="relative min-h-screen w-full p-5 py-10 bg-hero bg-cover bg-fixed bg-right text-white"
+        >
           <div className="relative z-20 mt-20 lg:mt-36 max-w-6xl mx-auto">
-            <Link href="/" className="relative -left-2">
-              <Image
-                src={logoWhite}
-                width={200}
-                alt="Mozdevz - Comunidade Moçambicana de Desenvolvedores"
-              />
-            </Link>
-
-            <h1 className="text-5xl mt-14 lg:mt-2">
-              2023 Developer <br />
-              Skills Report
+            <h1 className="text-5xl my-10 font-semibold lg:text-6xl text mt-14 lg:mt-2">
+              Mozambique Developer <br />
+              Survey
             </h1>
 
-            <p className="my-16">
-              Resultados baseados em <br />
-              <strong>34,000 Desenvolvedores</strong>
-            </p>
-
-            <a
-              href="#form"
-              className="py-3 px-14 flex items-center gap-4 max-w-xs bg-blue-500 rounded-sm hover:brightness-75  transition-all"
-            >
-              <ArrowCircleDown size={36} />
-              <span className="text-lg">Baixar resultados</span>
-            </a>
+            <DownloadButton />
           </div>
           <div className="absolute z-10 bg-black/80 w-full h-full top-0 left-0"></div>
         </section>
 
-        <section className="relative min-h-screen w-full p-5 py-10 bg-about bg-cover bg-fixed bg-right text-white">
+        <section
+          id="about"
+          className="relative min-h-screen w-full p-5 py-10 text-white"
+        >
           <div className="relative z-20 max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Sobre</h2>
             <div className="w-full flex flex-wrap gap-10 justify-between">
@@ -99,7 +80,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="absolute z-10 bg-black/80 w-full h-full top-0 left-0"></div>
         </section>
 
         <section className="w-full p-5 py-10 text-white relative">
@@ -211,12 +191,12 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="absolute h-60 w-full bottom-0 left-0 backdrop-filter backdrop-blur-[2px] bg-gradient-to-b from-transparent to-[#060a35]"></div>
+              <div className="absolute h-72 w-full -bottom-10 left-0 backdrop-filter backdrop-blur-[2px] bg-gradient-to-b from-transparent to-[#1E2571]"></div>
             </div>
           </div>
         </section>
 
-        <section>
+        <section className="">
           <SubmitForm />
         </section>
       </main>
