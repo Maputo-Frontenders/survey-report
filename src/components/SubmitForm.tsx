@@ -6,7 +6,6 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import CountryModal from "./modal/CountryModal";
 import { setRevalidateHeaders } from "next/dist/server/send-payload";
-import sendEmail from "@/utils/sendEmail";
 
 const submitFormDataSchema = z.object({
   email: z
@@ -54,8 +53,16 @@ const SubmitForm: React.FC = () => {
   });
 
   const sendPDF = async (data: any) => {
-    await sendEmail(data);
-    reset();
+    const res = await fetch("/api/sendEmail", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify(data)
+    });
+
+    console.log(res);
+    //reset();
     window.alert("Check o seu email.");
   };
 

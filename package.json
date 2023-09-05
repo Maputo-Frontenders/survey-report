@@ -13,13 +13,17 @@
     "@emotion/styled": "^11.11.0",
     "@hookform/resolvers": "^3.1.0",
     "@mui/material": "^5.13.2",
+    "@supabase/supabase-js": "^2.33.1",
     "@types/node": "18.15.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
     "apexcharts": "^3.39.0",
+    "encoding": "^0.1.13",
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.4",
+    "fs": "^0.0.1-security",
     "next": "13.2.4",
+    "nodemailer": "^6.9.4",
     "phosphor-react": "^1.4.1",
     "react": "18.2.0",
     "react-apexcharts": "^1.4.0",
@@ -29,6 +33,7 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
+    "@types/nodemailer": "^6.4.9",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.7"
