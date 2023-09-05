@@ -7,7 +7,6 @@ import { List, X } from "phosphor-react";
 import ActiveLink from "./ActiveLink";
 import Link from "next/link";
 
-
 const menuItems = [
   { name: "Home", href: "#home" },
   { name: "Sobre", href: "#about" },
@@ -49,9 +48,9 @@ const NavBar: React.FC = () => {
           <div className="flex items-center gap-8">
             <Link href="/" className="text-2xl font-bold block">
               <Image
-                src={`/images/${ scrollY > 200 ? "logo.png" : "logo-white.png" }`}
+                src={`/images/${scrollY > 200 ? "logo.png" : "logo-white.png"}`}
                 width={130}
-                height={130 }
+                height={130}
                 alt="Mozdevz - Comunidade Moçambicana de Desenvolvedores"
               />
             </Link>
@@ -59,10 +58,16 @@ const NavBar: React.FC = () => {
 
           <div className="w-full flex gap-10 justify-end items-center">
             <nav className="flex gap-10">
-              <select className="bg-transparent  outline-none text-sm rounded-lg  block w-full p-2.5 ">
+              <select
+                className={`bg-transparent  outline-none text-sm rounded-lg  block w-full p-2.5 `}
+              >
                 {languange.map((lang) => {
                   return (
-                    <option key={lang.name} value={lang.name}>
+                    <option
+                      className="text-black"
+                      key={lang.name}
+                      value={lang.name}
+                    >
                       {lang.name}
                     </option>
                   );
@@ -73,10 +78,10 @@ const NavBar: React.FC = () => {
                   return (
                     <li key={menuItem.href}>
                       <Link
-                        href={ menuItem.href }
+                        href={menuItem.href}
                         className="font-bold hover:text-red-500 transition-colors"
                       >
-                        { menuItem.name }
+                        {menuItem.name}
                       </Link>
                     </li>
                   );
@@ -89,7 +94,7 @@ const NavBar: React.FC = () => {
         <div className="flex justify-between lg:hidden">
           <Link href="/" className="text-2xl font-bold block">
             <Image
-              src={`/images/${ scrollY > 200 ? "logo.png" : "logo-white.png" }`}
+              src={`/images/${scrollY > 200 ? "logo.png" : "logo-white.png"}`}
               width={130}
               height={130}
               alt="Mozdevz - Comunidade Moçambicana de Desenvolvedores"
@@ -116,7 +121,7 @@ const NavBar: React.FC = () => {
               <div className="flex gap-3 justify-between items-center">
                 <Link href="/" className="text-2xl font-bold block">
                   <Image
-                    src={ "/images/logo.png" }
+                    src={"/images/logo.png"}
                     width={130}
                     height={130}
                     alt="Mozdevz - Comunidade Moçambicana de Desenvolvedores"
@@ -135,7 +140,7 @@ const NavBar: React.FC = () => {
                 />
               </div>
 
-              <nav className="block mt-28 mb-10">
+              <nav className="block mt-28 mb-10 gap-5">
                 <ul className="flex flex-col gap-5 font-thin">
                   {menuItems.map((menuItem) => {
                     return (
@@ -150,6 +155,22 @@ const NavBar: React.FC = () => {
                     );
                   })}
                 </ul>
+
+                <select
+                  className={`  bg-transparent outline-none text-sm rounded-lg  block w-full -ml-1 mt-5`}
+                >
+                  {languange.map((lang) => {
+                    return (
+                      <option
+                        className="text-black "
+                        key={lang.name}
+                        value={lang.name}
+                      >
+                        {lang.name}
+                      </option>
+                    );
+                  })}
+                </select>
               </nav>
             </div>
           </div>
