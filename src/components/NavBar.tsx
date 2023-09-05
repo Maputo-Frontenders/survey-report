@@ -140,7 +140,7 @@ const NavBar: React.FC = () => {
                 />
               </div>
 
-              <nav className="block mt-28 mb-10">
+              <nav className="block mt-28 mb-10 gap-5">
                 <ul className="flex flex-col gap-5 font-thin">
                   {menuItems.map((menuItem) => {
                     return (
@@ -155,6 +155,22 @@ const NavBar: React.FC = () => {
                     );
                   })}
                 </ul>
+
+                <select
+                  className={`  bg-transparent outline-none text-sm rounded-lg  block w-full -ml-1 mt-5`}
+                >
+                  {languange.map((lang) => {
+                    return (
+                      <option
+                        className="text-black "
+                        key={lang.name}
+                        value={lang.name}
+                      >
+                        {lang.name}
+                      </option>
+                    );
+                  })}
+                </select>
               </nav>
             </div>
           </div>
