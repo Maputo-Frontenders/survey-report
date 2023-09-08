@@ -83,7 +83,7 @@ const SubmitForm: React.FC = () => {
       id="form"
     >
       <ToastContainer className={'text-red-500'} />
-      <h3 className="text-white text-4xl pb-10 text-center">
+      <h3 className="text-white text-4xl font-bold pb-10 text-center">
         Preencha o formulário para acessar os resultados da pesquisa
       </h3>
       <form
