@@ -14,6 +14,10 @@ module.exports = {
       },
       colors: {
         primary: "#07090a",
+        secondary: "#28318a",
+        red: {
+          '500': '#e2363c'
+        }
       },
     },
   },

@@ -5,7 +5,8 @@ import { useForm, FieldValues } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import CountryModal from "./modal/CountryModal";
-import { setRevalidateHeaders } from "next/dist/server/send-payload";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const submitFormDataSchema = z.object({
   email: z
@@ -42,6 +43,8 @@ const style = {
 
 const SubmitForm: React.FC = () => {
   const [visible, setVisible] = useState(false);
+  const success = () => toast("Check your e-mail!", {theme: "colored"});
+  const failed = () => toast("Something went wrong!");
 
   const {
     register,
@@ -59,11 +62,13 @@ const SubmitForm: React.FC = () => {
       },
       method: "POST",
       body: JSON.stringify(data)
+    }).then(() => {
+      reset();
+      success()
+    }).catch(() => {
+      failed()
     });
 
-    console.log(res);
-    //reset();
-    window.alert("Check o seu email.");
   };
 
   const handleSelect = ($event: any) => {
@@ -74,12 +79,13 @@ const SubmitForm: React.FC = () => {
 
   return (
     <div
-      className="flex justify-center items-center w-screen flex-col p-5 mb-20 pt-[200px]"
+      className="flex justify-center items-center w-screen flex-col p-5 pb-20 pt-[200px]"
       id="form"
     >
-      <h2 className="text-white text-xl mb-10 text-center">
-        Preencha o Formulário para Acessar os Resultados da Pesquisa
-      </h2>
+      <ToastContainer className={'text-red-500'} />
+      <h3 className="text-white text-4xl pb-10 text-center">
+        Preencha o formulário para acessar os resultados da pesquisa
+      </h3>
       <form
         onSubmit={handleSubmit(sendPDF)}
         className="p-4 w-full max-w-2xl bg-white py-7 pt-12 rounded"

@@ -18,8 +18,8 @@ export default function Home() {
         >
           <div className="relative z-20 mt-20 lg:mt-36 max-w-6xl mx-auto">
             <h1 className="text-5xl my-10 font-semibold lg:text-6xl text mt-14 lg:mt-2">
-              Mozambique Developer <br />
-              Survey
+              Mozambique Developer <br/>
+              Survey 1ᵅ Edição
             </h1>
 
             <DownloadButton />
@@ -33,49 +33,17 @@ export default function Home() {
         >
           <div className="relative z-20 max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Sobre</h2>
-            <div className="w-full flex flex-wrap gap-10 justify-between">
+            <div className="w-full flex flex-wrap gap-6 justify-between">
               <div className="max-w-md flex flex-col gap-4">
                 <p>
-                  Lorem ipsum id sit veniam ullamco sed ex ad ut quis qui aliqua
-                  labore ad nulla. dolor minim in labore voluptate duis ut
-                  voluptate velit aute in veniam magna ut sint magna sed laboris
-                  cupidatat labore exercitation
-                </p>
-                <p>
-                  Fugiat adipisicing occaecat deserunt tempor qui et deserunt
-                  sunt officia tempor voluptate ex cillum laboris consectetur
-                  amet eu tempor pariatur ad consequat do sint mollit velit eu
-                  amet tempor veniam sed ullamco duis fugiat consequat dolore ut
-                  amet tempor id sint esse reprehenderit aliquip ut do laboris
-                  consequat duis sit reprehenderit cupidatat minim cupidatat non
-                  nisi exercitation dolor in est laborum anim occaecat ad
-                  aliquip officia pariatur dolor sint proident velit nisi duis
-                  ut in et laborum nostrud mollit cupidatat id irure cupidatat
-                  aliquip aliquip id magna ad reprehenderit adipisicing mollit
-                  est nulla pariatur cupidatat veniam voluptate qui esse nisi
-                  elit fugiat non sunt adipisicing nisi nisi excepteur cillum
-                  qui esse veniam.
+                 Bem-vindos à primeira edição da Mozambique Developer Survey, um inquérito abrangente organizado pela Mozdevz, que tem como objetivo desvendar o mundo dos desenvolvedores em Moçambique.</p>
+                 <p>Nesta pesquisa, mergulhamos no universo da tecnologia e do desenvolvimento de soluções tecnológicas, desde aqueles que estão a começar a sua jornada até os profissionais experientes que estão a moldar o cenário tecnológico do país.
                 </p>
               </div>
               <div className="max-w-md flex flex-col gap-4">
                 <p>
-                  Fugiat adipisicing occaecat deserunt tempor qui et deserunt
-                  sunt officia tempor voluptate ex cillum laboris consectetur
-                  amet eu tempor pariatur ad consequat do sint mollit velit
-                  dolor minim in labore voluptate duis ut voluptate velit aute
-                  in veniam magna ut sint magna sed laboris cupidatat labore
-                  exercitation eu amet tempor veniam sed ullamco duis fugiat
-                  consequat dolore ut amet tempor id sint esse reprehenderit
-                  adipisicing mollit est nulla pariatur cupidatat veniam
-                  voluptate qui esse nisi elit fugiat non sunt adipisicing nisi
-                  nisi excepteur cillum qui esse veniam eu in veniam culpa aute
-                  laboris dolor eu est do excepteur dolor consequat laboris eu
-                  officia qui excepteur consequat qui pariatur enim ut id dolore
-                  cillum sint eu ex qui consectetur nisi consectetur nostrud
-                  ullamco consequat dolore commodo adipisicing anim ut elit
-                  deserunt officia id incididunt nostrud in anim reprehenderit
-                  commodo aute aliquip adipisicing reprehenderit et enim
-                  excepteur occaecat do occaecat anim irure
+                  O propósito desta iniciativa é obter uma visão real e detalhada das tendências predominantes no campo da tecnologia e desenvolvimento em Moçambique. Nosso objetivo é entender as preferências, habilidades e aspirações dos desenvolvedores, além de fornecer insights valiosos para ajudar a comunidade e o setor a crescer e prosperar.
+                  Estamos empolgados em compartilhar com vocês os resultados da Mozambique Developer Survey e esperamos que este relatório seja uma fonte de inspiração, aprendizado e colaboração para todos os envolvidos no setor de tecnologia e desenvolvimento em nosso país.
                 </p>
               </div>
             </div>
@@ -191,12 +159,12 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="absolute h-72 w-full -bottom-10 left-0 backdrop-filter backdrop-blur-[2px] bg-gradient-to-b from-transparent to-[#1E2571]"></div>
+              <div className="absolute h-72 w-full -bottom-10 left-0 backdrop-filter backdrop-blur-[2px] bg-gradient-to-b from-transparent to-secondary"></div>
             </div>
           </div>
         </section>
 
-        <section className="">
+        <section className="bg-primary">
           <SubmitForm />
         </section>
       </main>
