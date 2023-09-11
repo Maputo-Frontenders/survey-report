@@ -1,0 +1,19 @@
+{
+  "active_locale": "Português",
+  "menu_item_1": "Inicio",
+  "menu_item_2": "Sobre nos",
+  "hero_title": "Mozambique Developer Survey 1ᵅ Edição",
+  "hero_button": "Baixar resultados",
+  "about_us_title": "Sobre nos",
+  "about_us_paragraph_1": "Bem-vindos à primeira edição da Mozambique Developer Survey, um inquérito abrangente organizado pela Mozdevz, que tem como objetivo desvendar o mundo dos desenvolvedores em Moçambique.",
+  "about_us_paragraph_2": "Nesta pesquisa, mergulhamos no universo da tecnologia e do desenvolvimento de soluções tecnológicas, desde aqueles que estão a começar a sua jornada até os profissionais experientes que estão a moldar o cenário tecnológico do país",
+  "about_us_paragraph_3": "O propósito desta iniciativa é obter uma visão real e detalhada das tendências predominantes no campo da tecnologia e desenvolvimento em Moçambique. Nosso objetivo é entender as preferências, habilidades e aspirações dos desenvolvedores, além de fornecer insights valiosos para ajudar a comunidade e o setor a crescer e prosperar. Estamos empolgados em compartilhar com vocês os resultados da Mozambique Developer Survey e esperamos que este relatório seja uma fonte de inspiração, aprendizado e colaboração para todos os envolvidos no setor de tecnologia e desenvolvimento em nosso país.",
+  "form_title": "Preencha o formulário para acessar os resultados da pesquisa",
+  "form_email_text": "E-mail",
+  "form_name_text": "Nome",
+  "form_surname_text": "Apelido",
+  "form_IName_text": "Nome da Instituição",
+  "form_role_text": "Título do cargo / Curso",
+  "form_residence_text": "Província / País",
+  "footer": "Copyright © 2023 Mozdevz. Todos os direitos reservados"
+}

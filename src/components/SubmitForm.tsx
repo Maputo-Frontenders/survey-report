@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import CountryModal from "./modal/CountryModal";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useTranslation from 'next-translate/useTranslation';
 
 const submitFormDataSchema = z.object({
   email: z
@@ -46,6 +47,8 @@ const SubmitForm: React.FC = () => {
   const success = () => toast("Check your e-mail!", {theme: "colored"});
   const failed = () => toast("Something went wrong!");
 
+  const { t, lang } = useTranslation("common");
+
   const {
     register,
     handleSubmit,
@@ -83,37 +86,35 @@ const SubmitForm: React.FC = () => {
       id="form"
     >
       <ToastContainer className={'text-red-500'} />
-      <h3 className="text-white text-4xl font-bold pb-10 text-center">
-        Preencha o formulário para acessar os resultados da pesquisa
-      </h3>
+      <h3 className="text-white text-4xl font-bold pb-10 text-center">{t('form_title')}</h3>
       <form
         onSubmit={handleSubmit(sendPDF)}
         className="p-4 w-full max-w-2xl bg-white py-7 pt-12 rounded"
       >
         <div className="flex gap-10 flex-wrap justify-center">
           <div className={style.main}>
-            <label className={style.label}>E-mail</label>
+            <label className={style.label}>{t("form_email_text")}</label>
             <input className={style.input} {...register("email")} />
             {errors?.email && (
               <span className="text-red-700">{`${errors.email.message}`}</span>
             )}
           </div>
           <div className={style.main}>
-            <label className={style.label}>Nome</label>
+            <label className={style.label}>{t("form_name_text")}</label>
             <input className={style.input} {...register("firstName")} />
             {errors?.firstName && (
               <span className="text-red-700">{`${errors.firstName.message}`}</span>
             )}
           </div>
           <div className={style.main}>
-            <label className={style.label}>Apelido</label>
+            <label className={style.label}>{t("form_surname_text")}</label>
             <input className={style.input} {...register("lastName")} />
             {errors?.lastName && (
               <span className="text-red-700">{`${errors?.lastName.message}`}</span>
             )}
           </div>
           <div className={style.main}>
-            <label className={style.label}>Nome da Instituição</label>
+            <label className={style.label}>{t("form_IName_text")}</label>
             <input
               className={style.input}
               {...register("companyOrUniversityName")}
@@ -123,14 +124,14 @@ const SubmitForm: React.FC = () => {
             )}
           </div>
           <div className={style.main}>
-            <label className={style.label}>Título do cargo / Curso</label>
+            <label className={style.label}>{t("form_role_text")}</label>
             <input className={style.input} {...register("jobOrCourseTitle")} />
             {errors?.jobOrCourseTitle && (
               <span className="text-red-700">{`${errors.jobOrCourseTitle.message}`}</span>
             )}
           </div>
           <div className={style.main}>
-            <label className={style.label}>Província / País</label>
+            <label className={style.label}>{t("form_residence_text")}</label>
             <select
               id="select"
               className={style.input}
