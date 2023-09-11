@@ -1,15 +1,18 @@
 import NavBar from "@/components/NavBar";
-
 import BarChart from "@/components/charts/BarChart";
 import ColumnChart from "@/components/charts/ColumnChart";
 import SubmitForm from "@/components/SubmitForm";
 import Footer from "@/components/Footer";
 import DownloadButton from "@/components/DownloadButton";
 
-export default function Home() {
+import useTranslation from 'next-translate/useTranslation'
+
+export default function Home() { 
+  const { t, lang } = useTranslation("common");
+
   return (
     <>
-      {<NavBar />}
+      { <NavBar /> }
 
       <main className="w-full h-full transition-all">
         <section
@@ -17,9 +20,8 @@ export default function Home() {
           className="relative min-h-screen w-full p-5 py-10 bg-hero bg-cover bg-fixed bg-right text-white"
         >
           <div className="relative z-20 mt-20 lg:mt-36 max-w-6xl mx-auto">
-            <h1 className="text-5xl my-10 font-semibold lg:text-6xl text mt-14 lg:mt-2">
-              Mozambique Developer <br/>
-              Survey 1ᵅ Edição
+            <h1 className="text-5xl my-10 max-w-2xl w-full font-semibold lg:text-6xl text mt-14 lg:mt-2">
+              {t('hero_title')}
             </h1>
 
             <DownloadButton />

@@ -1,26 +1,32 @@
 "use client";
 
+import useTranslation from 'next-translate/useTranslation'
+import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { List, X } from "phosphor-react";
-
-import ActiveLink from "./ActiveLink";
-import Link from "next/link";
-
-const menuItems = [
-  { name: "Home", href: "#home" },
-  { name: "Sobre", href: "#about" },
-];
+import { useRouter } from 'next/navigation';
 
 const NavBar: React.FC = () => {
+  const router = useRouter();
+  const { t, lang } = useTranslation("common");
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-  const languange = [
+  
+  const menuItems = [
+    { name: t('menu_item_1'), href: "#home" },
+    { name: t('menu_item_2'), href: "#about" },
+  ];
+
+  const languanges = [
     {
       name: "Português",
+      locale: "pt"
     },
     {
       name: "English",
+      locale: "en"
     },
   ];
 
@@ -30,6 +36,11 @@ const NavBar: React.FC = () => {
       setScrollY(window.scrollY);
     });
   }, []);
+
+  const handleLanguageChange = (event: any) => {
+    const selectedLanguage = event.target.value;
+    router.push(`/?lang=${selectedLanguage}`);
+  };
 
   return (
     <header
@@ -57,26 +68,11 @@ const NavBar: React.FC = () => {
           </div>
 
           <div className="w-full flex gap-10 justify-end items-center">
-            <nav className="flex gap-10">
-              <select
-                className={`bg-transparent  outline-none text-sm rounded-lg  block w-full p-2.5 `}
-              >
-                {languange.map((lang) => {
-                  return (
-                    <option
-                      className="text-black"
-                      key={lang.name}
-                      value={lang.name}
-                    >
-                      {lang.name}
-                    </option>
-                  );
-                })}
-              </select>
+            <nav className="flex gap-5">
               <ul className="flex items-center gap-5 text-sm">
                 {menuItems.map((menuItem) => {
                   return (
-                    <li key={menuItem.href}>
+                    <li key={menuItem.href} className="w-max">
                       <Link
                         href={menuItem.href}
                         className="font-bold hover:text-red-500 transition-colors"
@@ -87,6 +83,25 @@ const NavBar: React.FC = () => {
                   );
                 })}
               </ul>
+
+              <select
+                className={`bg-transparent  outline-none text-sm rounded-lg  block w-full p-2.5 `}
+                onChange={handleLanguageChange}
+              >
+                {
+                  languanges.map((languange) => {
+                    return (
+                      <option
+                        className="text-black"
+                        key={ languange.name }
+                        value={ languange.locale }
+                      >
+                        { languange.name }
+                      </option>
+                    );
+                  })
+                }
+              </select>
             </nav>
           </div>
         </div>
@@ -158,18 +173,21 @@ const NavBar: React.FC = () => {
 
                 <select
                   className={`  bg-transparent outline-none text-sm rounded-lg  block w-full -ml-1 mt-5`}
+                  onChange={handleLanguageChange}
                 >
-                  {languange.map((lang) => {
-                    return (
-                      <option
-                        className="text-black "
-                        key={lang.name}
-                        value={lang.name}
-                      >
-                        {lang.name}
-                      </option>
-                    );
-                  })}
+                  {
+                    languanges.map((languange) => {
+                      return (
+                        <option
+                          className="text-black "
+                          key={ languange.name }
+                          value={languange.locale }
+                        >
+                          { languange.name }
+                        </option>
+                      );
+                    })
+                  }
                 </select>
               </nav>
             </div>
