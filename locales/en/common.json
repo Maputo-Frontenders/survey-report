@@ -3,5 +3,17 @@
   "menu_item_1": "Home",
   "menu_item_2": "About",
   "hero_title": "Mozambique Developer Survey 1ᵅ Editon",
-  "hero_button": "Download results"
+  "hero_button": "Download results",
+  "about_us_title": "About us",
+  "about_us_paragraph_1": "Welcome to the first edition of the Mozambique Developer Survey, a comprehensive inquiry organized by Mozdevz, aimed at uncovering the world of developers in Mozambique.",
+  "about_us_paragraph_2": "In this survey, we delve into the realm of technology and the development of technological solutions, from those who are beginning their journey to experienced professionals who are shaping the country's technological landscape.",
+  "about_us_paragraph_3": "The purpose of this initiative is to gain a real and detailed insight into the prevailing trends in the field of technology and development in Mozambique. Our goal is to understand developers' preferences, skills, and aspirations while providing valuable insights to help the community and the industry grow and thrive. We are excited to share the results of the Mozambique Developer Survey with you and hope that this report serves as a source of inspiration, learning, and collaboration for everyone involved in the technology and development sector in our country.",
+  "form_title": "Fill out the form to access the survey results",
+  "form_email_text": "Email",
+  "form_name_text": "Name",
+  "form_surname_text": "Surname",
+  "form_IName_text": "Institution Name",
+  "form_role_text": "Job Title / Course",
+  "form_residence_text": "Province / Country",
+  "footer": "Copyright © 2023 Mozdevz. All rights reserved."
 }

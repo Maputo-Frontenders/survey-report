@@ -34,19 +34,14 @@ export default function Home() {
           className="relative min-h-screen w-full p-5 py-10 text-white"
         >
           <div className="relative z-20 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6">Sobre</h2>
+            <h2 className="text-3xl font-bold mb-6">{t("about_us_title")}</h2>
             <div className="w-full flex flex-wrap gap-6 justify-between">
               <div className="max-w-md flex flex-col gap-4">
-                <p>
-                 Bem-vindos à primeira edição da Mozambique Developer Survey, um inquérito abrangente organizado pela Mozdevz, que tem como objetivo desvendar o mundo dos desenvolvedores em Moçambique.</p>
-                 <p>Nesta pesquisa, mergulhamos no universo da tecnologia e do desenvolvimento de soluções tecnológicas, desde aqueles que estão a começar a sua jornada até os profissionais experientes que estão a moldar o cenário tecnológico do país.
-                </p>
+                <p>{t("about_us_paragraph_1")}</p>
+                <p>{t("about_us_paragraph_2")}</p>
               </div>
               <div className="max-w-md flex flex-col gap-4">
-                <p>
-                  O propósito desta iniciativa é obter uma visão real e detalhada das tendências predominantes no campo da tecnologia e desenvolvimento em Moçambique. Nosso objetivo é entender as preferências, habilidades e aspirações dos desenvolvedores, além de fornecer insights valiosos para ajudar a comunidade e o setor a crescer e prosperar.
-                  Estamos empolgados em compartilhar com vocês os resultados da Mozambique Developer Survey e esperamos que este relatório seja uma fonte de inspiração, aprendizado e colaboração para todos os envolvidos no setor de tecnologia e desenvolvimento em nosso país.
-                </p>
+                <p>{t("about_us_paragraph_2")}</p>
               </div>
             </div>
           </div>
