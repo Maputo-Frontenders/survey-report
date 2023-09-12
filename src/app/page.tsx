@@ -34,14 +34,14 @@ export default function Home() {
           className="relative min-h-screen w-full p-5 py-10 text-white"
         >
           <div className="relative z-20 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6">{t("about_us_title")}</h2>
+            <h2 className="text-3xl font-bold mb-6">{t("about_title")}</h2>
             <div className="w-full flex flex-wrap gap-6 justify-between">
               <div className="max-w-md flex flex-col gap-4">
-                <p>{t("about_us_paragraph_1")}</p>
-                <p>{t("about_us_paragraph_2")}</p>
+                <p>{t("about_paragraph_1")}</p>
+                <p>{t("about_paragraph_2")}</p>
               </div>
               <div className="max-w-md flex flex-col gap-4">
-                <p>{t("about_us_paragraph_2")}</p>
+                <p>{t("about_paragraph_2")}</p>
               </div>
             </div>
           </div>
@@ -49,31 +49,19 @@ export default function Home() {
 
         <section className="w-full p-5 py-10 text-white relative">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-lg font-bold mb-6">LEARNING & EDUCATION</h2>
+            <h2 className="text-lg font-bold mb-6">{t("development")}</h2>
 
             <div className="flex flex-col w-full gap-20">
               <div className="flex justify-center  lg:justify-between flex-wrap gap-10">
                 <div className="max-w-md flex flex-col gap-4">
                   <h3 className="text-4xl font-bold mb-6">
-                    For learning to code, C is overtaking BASIC
+                    {t("most_used_lang")}
                   </h3>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quasi magni voluptatibus quibusdam repellat dolorum,
-                    incidunt ullam commodi minima ut tempora beatae, laborum eum
-                    cum ipsam molestias nisi facere eius illo.
+                    {t("most_used_lang_statistics")}
                   </p>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quasi magni voluptatibus quibusdam repellat dolorum,
-                    incidunt ullam commodi minima ut tempora beatae, laborum eum
-                    cum ipsam molestias nisi facere eius illo.
-                  </p>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quasi magni voluptatibus quibusdam repellat dolorum,
-                    incidunt ullam commodi minima ut tempora beatae, laborum eum
-                    cum ipsam molestias nisi facere eius illo.
+                    {t("most_used_markup_lang")}
                   </p>
                 </div>
                 <div className="flex flex-col gap-4 max-w-lg w-full">
@@ -106,25 +94,16 @@ export default function Home() {
               <div className="flex justify-center  lg:justify-between flex-wrap gap-10">
                 <div className="max-w-md flex flex-col gap-4">
                   <h3 className="text-4xl font-bold mb-6">
-                    Gen Z utilizes bootcamps to learn new skills
+                    {t("education_and_learning")}
                   </h3>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quasi magni voluptatibus quibusdam repellat dolorum,
-                    incidunt ullam commodi minima ut tempora beatae, laborum eum
-                    cum ipsam molestias nisi facere eius illo.
+                    {t("where_learn")}
                   </p>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quasi magni voluptatibus quibusdam repellat dolorum,
-                    incidunt ullam commodi minima ut tempora beatae, laborum eum
-                    cum ipsam molestias nisi facere eius illo.
+                    {t("learn_methods_1")}
                   </p>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quasi magni voluptatibus quibusdam repellat dolorum,
-                    incidunt ullam commodi minima ut tempora beatae, laborum eum
-                    cum ipsam molestias nisi facere eius illo.
+                    {t("learn_methods_2")}
                   </p>
                 </div>
 
