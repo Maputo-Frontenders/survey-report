@@ -39,7 +39,7 @@ const NavBar: React.FC = () => {
 
   const handleLanguageChange = (event: any) => {
     const selectedLanguage = event.target.value;
-    router.push(`/?lang=${selectedLanguage}`);
+    router.push(`/pt?lang=${selectedLanguage}`);
   };
 
   return (
