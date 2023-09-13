@@ -20,8 +20,11 @@
   "most_used_lang_statistics": "More than 14.95% of programmers use Java, compared to approximately 14.6% who use Python. On the other hand, Ruby is the programming language least adopted by Mozambicans.",
   "most_used_markup_lang": "In markup languages, HTML/CSS dominates with around 18% adoption by Developers.",
   "education_and_learning": "Education and learning",
+  "most_used_languages": "What programming, scripting and/or markup languages do you use?",
+  "percentage_text": "Percentage of people",
   "where_learn": "It is at School (University, Institute or High School) where many Developers learn to program",
   "learn_methods_1": "There are several methods for learning to program, with VoD platforms being the most preferred, YouTube stands out with more than 34.89%, followed by Udemy and LinkedIn Learning with 20% and 9% respectively.",
   "learn_methods_2": "Although VoD is the primary choice for developers to improve their skills, it is at School (University, Institute or High School) where many of them learn to program",
+  "education_section_subtitle": "What platforms do you use to learn?",
   "footer": "Copyright © 2023 Mozdevz. All rights reserved."
 }

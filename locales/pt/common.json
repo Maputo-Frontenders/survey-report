@@ -19,9 +19,12 @@
   "most_used_lang": "Java é a linguagem de programação mais usada em Moçambique",
   "most_used_lang_statistics": "Mais de 14.95% dos programadores usam Java, contra aproximadamente 14.6% que usa Python. Por outro lado, Ruby é a linguagem de programação menos aderida pelos moçambicanos.",
   "most_used_markup_lang": "Nas linguagens de marcação, HTML/CSS dominam com cerca de 18% de aderência por parte dos Desenvolvedores .",
+  "most_used_languages": "Quais linguagens de programação, script e/ou marcação usa?",
+  "percentage_text": "Percentagem das pessoas",
   "education_and_learning": "Educação e aprendizagem",
   "where_learn": "É na Escola (Universidade, Instituto ou Escola secundária) onde muito Desenvolvedores aprendem a programar ",
   "learn_methods_1": "Existem vários métodos para aprender a programar, sendo que as plataformas de VoD as mais preferidas, o YouTube destaca-se com mais de 34.89%, seguido do Udemy e LinkedIn Learning com 20% e 9% respectivamente.",
   "learn_methods_2": "Apesar dos VoD serem a escolha primordial dos desenvolvedores para aperfeiçoar suas habilidades, é na Escola (Universidade, Instituto ou Escola secundária) onde muito deles aprendem a programar",
+  "education_section_subtitle": "Quais plataformas você usa para aprender?",
   "footer": "Copyright © 2023 Mozdevz. Todos os direitos reservados"
 }
