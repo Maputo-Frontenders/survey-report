@@ -1,11 +1,11 @@
 "use client";
 
-import useTranslation from 'next-translate/useTranslation'
+import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { List, X } from "phosphor-react";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 
 const NavBar: React.FC = () => {
   const router = useRouter();
@@ -13,20 +13,20 @@ const NavBar: React.FC = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-  
+
   const menuItems = [
-    { name: t('menu_item_1'), href: "#home" },
-    { name: t('menu_item_2'), href: "#about" },
+    { name: t("menu_item_1"), href: "#home" },
+    { name: t("menu_item_2"), href: "#about" },
   ];
 
   const languanges = [
     {
       name: "Português",
-      locale: "pt"
+      locale: "pt",
     },
     {
       name: "English",
-      locale: "en"
+      locale: "en",
     },
   ];
 
@@ -88,19 +88,17 @@ const NavBar: React.FC = () => {
                 className={`bg-transparent  outline-none text-sm rounded-lg  block w-full p-2.5 `}
                 onChange={handleLanguageChange}
               >
-                {
-                  languanges.map((languange) => {
-                    return (
-                      <option
-                        className="text-black"
-                        key={ languange.name }
-                        value={ languange.locale }
-                      >
-                        { languange.name }
-                      </option>
-                    );
-                  })
-                }
+                {languanges.map((languange) => {
+                  return (
+                    <option
+                      className="text-black"
+                      key={languange.name}
+                      value={languange.locale}
+                    >
+                      {languange.name}
+                    </option>
+                  );
+                })}
               </select>
             </nav>
           </div>
@@ -175,19 +173,17 @@ const NavBar: React.FC = () => {
                   className={`  bg-transparent outline-none text-sm rounded-lg  block w-full -ml-1 mt-5`}
                   onChange={handleLanguageChange}
                 >
-                  {
-                    languanges.map((languange) => {
-                      return (
-                        <option
-                          className="text-black "
-                          key={ languange.name }
-                          value={languange.locale }
-                        >
-                          { languange.name }
-                        </option>
-                      );
-                    })
-                  }
+                  {languanges.map((languange) => {
+                    return (
+                      <option
+                        className="text-black "
+                        key={languange.name}
+                        value={languange.locale}
+                      >
+                        {languange.name}
+                      </option>
+                    );
+                  })}
                 </select>
               </nav>
             </div>
