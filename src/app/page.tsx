@@ -5,14 +5,14 @@ import SubmitForm from "@/components/SubmitForm";
 import Footer from "@/components/Footer";
 import DownloadButton from "@/components/DownloadButton";
 
-import useTranslation from 'next-translate/useTranslation'
+import useTranslation from "next-translate/useTranslation";
 
-export default function Home() { 
+export default function Home() {
   const { t, lang } = useTranslation("common");
 
   return (
     <>
-      { <NavBar /> }
+      {<NavBar />}
 
       <main className="w-full h-full transition-all">
         <section
@@ -21,7 +21,7 @@ export default function Home() {
         >
           <div className="relative z-20 mt-20 lg:mt-36 max-w-6xl mx-auto">
             <h1 className="text-5xl my-10 max-w-2xl w-full font-semibold lg:text-6xl text mt-14 lg:mt-2">
-              {t('hero_title')}
+              {t("hero_title")}
             </h1>
 
             <DownloadButton />
@@ -57,12 +57,8 @@ export default function Home() {
                   <h3 className="text-4xl font-bold mb-6">
                     {t("most_used_lang")}
                   </h3>
-                  <p>
-                    {t("most_used_lang_statistics")}
-                  </p>
-                  <p>
-                    {t("most_used_markup_lang")}
-                  </p>
+                  <p>{t("most_used_lang_statistics")}</p>
+                  <p>{t("most_used_markup_lang")}</p>
                 </div>
                 <div className="flex flex-col gap-4 max-w-lg w-full">
                   <h4 className="text-2xl font-normal mb-6">{t("most_used_languages")}</h4>
@@ -98,15 +94,9 @@ export default function Home() {
                   <h3 className="text-4xl font-bold mb-6">
                     {t("education_and_learning")}
                   </h3>
-                  <p>
-                    {t("where_learn")}
-                  </p>
-                  <p>
-                    {t("learn_methods_1")}
-                  </p>
-                  <p>
-                    {t("learn_methods_2")}
-                  </p>
+                  <p>{t("where_learn")}</p>
+                  <p>{t("learn_methods_1")}</p>
+                  <p>{t("learn_methods_2")}</p>
                 </div>
 
                 <div className="flex flex-col gap-4 max-w-lg w-full">
@@ -139,7 +129,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="absolute h-72 w-full -bottom-10 left-0 backdrop-filter backdrop-blur-[2px] bg-gradient-to-b from-transparent to-secondary"></div>
+              <div className="absolute h-72 w-full -bottom-10 left-0 backdrop-filter backdrop-blur-[2px] bg-gradient-to-b from-transparent to-primary"></div>
             </div>
           </div>
         </section>
