@@ -65,26 +65,28 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-4 max-w-lg w-full">
-                  <h4 className="text-2xl font-normal mb-6">
-                    What was the first language you learned to code in?
-                  </h4>
+                  <h4 className="text-2xl font-normal mb-6">{t("most_used_languages")}</h4>
                   <ColumnChart
                     data={{
                       series: [
                         {
-                          name: "Percentagem das pessoas",
-                          data: [8, 55, 57, 56, 45, 55, 12, 32],
+                          name: t("percentage_text"),
+                          data: [17.67, 14.95, 14.36, 14.21, 8.80, 8.60, 4.90, 4.36, 1.83, 1.71, 1.67, 1.21],
                         },
                       ],
                       categories: [
-                        "C",
-                        "Python",
+                        "HTML/CSS",
                         "Java",
-                        "C#",
-                        "PHP",
-                        "Go",
-                        "C++",
                         "JavaScript",
+                        "SQL",
+                        "PHP",
+                        "Python",
+                        "Typescript",
+                        "C#",
+                        "Bash/Shell",
+                        "Dart",
+                        "C++",
+                        "VBA",
                       ],
                     }}
                   />
@@ -108,27 +110,29 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-col gap-4 max-w-lg w-full">
-                  <h4 className="text-2xl font-normal mb-6">
-                    How do you learn new coding skills?
-                  </h4>
+                  <h4 className="text-2xl font-normal mb-6">{t("education_section_subtitle")}</h4>
 
                   <BarChart
                     data={{
                       series: [
                         {
-                          name: "Percentagem das pessoas",
-                          data: [8, 55, 57, 56, 45, 55, 12, 32],
+                          name: t("percentage_text"),
+                          data: [34.89, 20.32, 9.65, 8.45, 6.47, 5.16, 5.10, 4.08, 2.88, 1.62, 0.54, 0.48],
                         },
                       ],
                       categories: [
                         "Youtube",
-                        "Medium",
-                        "Geek for Geeks",
                         "Udemy",
-                        "Linked Learning",
-                        "Documentação",
-                        "Livros",
-                        "Não aprendo",
+                        "LinkedIn Learning",
+                        "Coursera",
+                        "Codeacademy",
+                        "Other",
+                        "Udacity",
+                        "edX",
+                        "Pluralsight",
+                        "Explicador",
+                        "Skillsoft",
+                        "Kutiva"
                       ],
                     }}
                   />
