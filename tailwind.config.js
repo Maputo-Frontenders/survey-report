@@ -10,14 +10,14 @@ module.exports = {
       backgroundImage: {
         hero: "url('/images/hero.jpg')",
         about: "url('/images/about.jpg')",
-        home: "linear-gradient(to bottom, #07090a, #28318a)",
+        home: "linear-gradient(to bottom, #07090a, #07090a)",
       },
       colors: {
         primary: "#07090a",
         secondary: "#28318a",
         red: {
-          '500': '#e2363c'
-        }
+          500: "#e2363c",
+        },
       },
     },
   },
