@@ -33,9 +33,10 @@ const ColumnChart: React.FC<{ data: any }> = ({ data }) => {
       labels: {
         style: {
           colors: "#fff",
-          fontSize: "0.8rem",
+          fontSize: "0.75rem",
         },
       },
+      offsetX: 10
     },
     yaxis: {
       axisBorder: {

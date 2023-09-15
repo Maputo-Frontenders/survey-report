@@ -31,7 +31,7 @@ export default function Home() {
 
         <section
           id="about"
-          className="relative min-h-screen w-full p-5 py-10 text-white"
+          className="relative w-full p-5 py-10 text-white"
         >
           <div className="relative z-20 max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">{t("about_title")}</h2>
@@ -64,14 +64,14 @@ export default function Home() {
                     {t("most_used_markup_lang")}
                   </p>
                 </div>
-                <div className="flex flex-col gap-4 max-w-lg w-full">
+                <div className="flex flex-col gap-4 max-w-xl w-full">
                   <h4 className="text-2xl font-normal mb-6">{t("most_used_languages")}</h4>
                   <ColumnChart
                     data={{
                       series: [
                         {
                           name: t("percentage_text"),
-                          data: [17.67, 14.95, 14.36, 14.21, 8.80, 8.60, 4.90, 4.36, 1.83, 1.71, 1.67, 1.21],
+                          data: [17.67, 14.95, 14.36, 14.21, 8.8, 8.6, 4.9, 4.36, 1.83],
                         },
                       ],
                       categories: [
@@ -83,17 +83,14 @@ export default function Home() {
                         "Python",
                         "Typescript",
                         "C#",
-                        "Bash/Shell",
-                        "Dart",
-                        "C++",
-                        "VBA",
+                        "Bash/Shell"
                       ],
                     }}
                   />
                 </div>
               </div>
 
-              <div className="flex justify-center  lg:justify-between flex-wrap gap-10">
+              <div className="flex justify-center lg:justify-between flex-wrap gap-10">
                 <div className="max-w-md flex flex-col gap-4">
                   <h3 className="text-4xl font-bold mb-6">
                     {t("education_and_learning")}
@@ -109,7 +106,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="flex flex-col gap-4 max-w-lg w-full">
+                <div className="flex flex-col gap-4 max-w-xl w-full">
                   <h4 className="text-2xl font-normal mb-6">{t("education_section_subtitle")}</h4>
 
                   <BarChart
