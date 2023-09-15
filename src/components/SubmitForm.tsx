@@ -18,20 +18,20 @@ const submitFormDataSchema = z.object({
     .email("E-mail Inválido"),
   firstName: z
     .string()
-    .nonempty("O primeioro nome é obrigatório.")
+    .nonempty("O primeiro nome é obrigatório.")
     .min(3, "No mínimo 3 caracteres."),
   lastName: z
     .string()
-    .nonempty("O último nome é obrigatório.")
+    .nonempty("O apelido é obrigatório.")
     .min(3, "No mínimo 3 caracteres."),
   companyOrUniversityName: z
     .string()
     .nonempty("Nome da empresa é obrigatório.")
-    .min(5, "No mínimo 5 caracteres."),
+    .min(3, "No mínimo 3 caracteres."),
   jobOrCourseTitle: z
     .string()
     .nonempty("Título do cargo é obrigatório")
-    .min(5, "No mínimo 5 caracteres."),
+    .min(3, "No mínimo 3 caracteres."),
   province: z.string().nonempty("Selecione a província!"),
 });
 
