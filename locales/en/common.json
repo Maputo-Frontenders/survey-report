@@ -37,6 +37,6 @@
   "jobOrCourseTitle": "Job title is required",
   "province": "Select your province!",
   "downloadMessage": "Download started!",
-  "errorDownlaod": "Oops, something went wrong!"
-
+  "errorDownlaod": "Oops, something went wrong!",
+  "url": "[EN]MozambiqueDeveloperSurvey.pdf"
 }
