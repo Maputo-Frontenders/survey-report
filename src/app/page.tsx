@@ -7,6 +7,7 @@ import DownloadButton from "@/components/DownloadButton";
 import Script from 'next/script'
 import useTranslation from "next-translate/useTranslation";
 
+
 export default function Home() {
   const { t, lang } = useTranslation("common");
 

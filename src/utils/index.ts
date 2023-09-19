@@ -1,5 +1,4 @@
 import supabase from "@/lib/supabase";
-
 const saveUserData = async (data: any) => {
   try {
     const { data: res, error } = await supabase
@@ -26,19 +25,18 @@ const saveUserData = async (data: any) => {
   }
 };
 
-function downloadFile(blob: Blob) {
-  var anchor = document.createElement("a");
-  const url = URL.createObjectURL(blob);
+function downloadSurvey(url: string) {
+  const anchor = document.createElement("a");
   anchor.style.display = "none";
   document.body.appendChild(anchor);
 
   anchor.href = url;
 
-  anchor.download = blob.name || "MozDevz Survey 1st Edition";
+  anchor.download = "MozDevz Survey 1st Edition";
 
   anchor.click();
 
   document.body.removeChild(anchor);
 }
 
-export { saveUserData, downloadFile };
+export { saveUserData, downloadSurvey };
