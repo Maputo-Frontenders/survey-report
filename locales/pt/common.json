@@ -1,7 +1,7 @@
 {
   "active_locale": "Português",
   "menu_item_1": "Inicio",
-  "menu_item_2": "Sobre nos",
+  "menu_item_2": "Sobre",
   "hero_title": "Mozambique Developer Survey 1ᵅ Edição",
   "hero_button": "Baixar resultados",
   "about_title": "Sobre a pesquisa",
@@ -27,5 +27,15 @@
   "learn_methods_1": "Existem vários métodos para aprender a programar, sendo que as plataformas de VoD as mais preferidas, o YouTube destaca-se com mais de 34.89%, seguido do Udemy e LinkedIn Learning com 20% e 9% respectivamente.",
   "learn_methods_2": "Apesar dos VoD serem a escolha primordial dos desenvolvedores para aperfeiçoar suas habilidades, é na Escola (Universidade, Instituto ou Escola secundária) onde muito deles aprendem a programar",
   "education_section_subtitle": "Quais plataformas você usa para aprender?",
-  "footer": "Copyright © 2023 Mozdevz. Todos os direitos reservados"
+  "footer": "Copyright © 2023 Mozdevz. Todos os direitos reservados",
+  "email": "O E-mail é obrigatório.",
+  "errorEmail": "E-mail Inválido",
+  "firstName": "O primeiro nome é obrigatório.",
+  "firstNameMin":  "No mínimo 3 caracteres.",
+  "lastName": "O apelido é obrigatório.",
+  "companyOrUniversityName": "Nome da empresa é obrigatório.",
+  "jobOrCourseTitle": "Título do cargo é obrigatório",
+  "province": "Selecione a província!",
+  "downloadMessage": "Download Começou!",
+  "errorDownlaod": "Ups, Algo deu errado!"
 }

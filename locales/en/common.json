@@ -27,5 +27,16 @@
   "learn_methods_1": "There are several methods for learning to program, with VoD platforms being the most preferred, YouTube stands out with more than 34.89%, followed by Udemy and LinkedIn Learning with 20% and 9% respectively.",
   "learn_methods_2": "Although VoD is the primary choice for developers to improve their skills, it is at School (University, Institute or High School) where many of them learn to program",
   "education_section_subtitle": "What platforms do you use to learn?",
-  "footer": "Copyright © 2023 Mozdevz. All rights reserved."
+  "footer": "Copyright © 2023 Mozdevz. All rights reserved.",
+  "email":"E-mail is required.",
+  "errorEmail": "Invalid Email",
+  "firstName": "The first name is required.",
+  "charNr":  "A minimum of 3 characters.",
+  "lastName": "The surname is required.",
+  "companyOrUniversityName": "Company name required.",
+  "jobOrCourseTitle": "Job title is required",
+  "province": "Select your province!",
+  "downloadMessage": "Download started!",
+  "errorDownlaod": "Oops, something went wrong!"
+
 }
