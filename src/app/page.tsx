@@ -4,7 +4,7 @@ import ColumnChart from "@/components/charts/ColumnChart";
 import SubmitForm from "@/components/SubmitForm";
 import Footer from "@/components/Footer";
 import DownloadButton from "@/components/DownloadButton";
-
+import Script from 'next/script'
 import useTranslation from "next-translate/useTranslation";
 
 export default function Home() {
@@ -12,8 +12,17 @@ export default function Home() {
 
   return (
     <>
-      {<NavBar />}
+      {<Script async src="https://www.googletagmanager.com/gtag/js?id=G-ZSMZR3HXYD"></Script>}
+      {<Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
+          gtag('config', 'G-ZSMZR3HXYD');
+        `}
+      </Script>}
+      {<NavBar />}
       <main className="w-full h-full transition-all">
         <section
           id="home"
