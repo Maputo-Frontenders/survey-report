@@ -10,8 +10,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useTranslation from "next-translate/useTranslation";
 
-import { downloadFile, saveUserData } from '@/utils'
-import { blob } from "stream/consumers";
+import { downloadSurvey, saveUserData } from '@/utils'
 
 const submitFormDataSchema = z.object({
   email: z
@@ -65,9 +64,7 @@ const SubmitForm: React.FC = () => {
     saveUserData(data)
       .then(() => {
         reset();
-        fetch('/static/docs/survey-report.pdf')
-        .then((res) =>  res.blob())
-        .then((file: any) => downloadFile(file))
+        downloadSurvey('/static/docs/survey-report.pdf')
         success();
       })
       .catch(() => {
