@@ -11,30 +11,31 @@ import "react-toastify/dist/ReactToastify.css";
 import useTranslation from "next-translate/useTranslation";
 
 import { downloadSurvey, saveUserData } from '@/utils'
+const { t, lang } = useTranslation("common");
 
 const submitFormDataSchema = z.object({
   email: z
     .string()
-    .nonempty("O E-mail é obrigatório.")
+    .nonempty(t("email"))
     .toLowerCase()
-    .email("E-mail Inválido"),
+    .email(t("errorEmail")),
   firstName: z
     .string()
-    .nonempty("O primeiro nome é obrigatório.")
-    .min(3, "No mínimo 3 caracteres."),
+    .nonempty(t("firstName"))
+    .min(3, t("charNr")),
   lastName: z
     .string()
-    .nonempty("O apelido é obrigatório.")
-    .min(3, "No mínimo 3 caracteres."),
+    .nonempty(t("lastName"))
+    .min(3, t("charNr")),
   companyOrUniversityName: z
     .string()
-    .nonempty("Nome da empresa é obrigatório.")
-    .min(3, "No mínimo 3 caracteres."),
+    .nonempty(t("companyOrUniversityName"))
+    .min(3, t("charNr")),
   jobOrCourseTitle: z
     .string()
-    .nonempty("Título do cargo é obrigatório")
-    .min(3, "No mínimo 3 caracteres."),
-  province: z.string().nonempty("Selecione a província!"),
+    .nonempty(t("jobOrCourseTitle"))
+    .min(3, t("charNr")),
+  province: z.string().nonempty(t("province")),
 });
 
 type SubmitFormData = z.infer<typeof submitFormDataSchema>;
@@ -46,8 +47,8 @@ const style = {
 
 const SubmitForm: React.FC = () => {
   const [visible, setVisible] = useState(false);
-  const success = () => toast("Download Começou!", { theme: "colored" });
-  const failed = () => toast("Ups, Algo deu errado!");
+  const success = () => toast(t("downloadMessage"), { theme: "colored" });
+  const failed = () => toast(t("errorDownlaod"));
 
   const { t, lang } = useTranslation("common");
 
@@ -64,14 +65,13 @@ const SubmitForm: React.FC = () => {
     saveUserData(data)
       .then(() => {
         reset();
-        downloadSurvey('/static/docs/survey-report.pdf')
+        downloadSurvey(`${'/static/docs/'}${t("url")}`)
         success();
       })
       .catch(() => {
         failed();
       });
   };
-
   const handleSelect = ($event: any) => {
     if ($event.target.value === "others") {
       setVisible(true);
