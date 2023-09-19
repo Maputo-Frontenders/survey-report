@@ -10,6 +10,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useTranslation from "next-translate/useTranslation";
 
+import { downloadFile, saveUserData } from '@/utils'
+import { blob } from "stream/consumers";
+
 const submitFormDataSchema = z.object({
   email: z
     .string()
@@ -44,8 +47,8 @@ const style = {
 
 const SubmitForm: React.FC = () => {
   const [visible, setVisible] = useState(false);
-  const success = () => toast("Check your e-mail!", { theme: "colored" });
-  const failed = () => toast("Something went wrong!");
+  const success = () => toast("Download Começou!", { theme: "colored" });
+  const failed = () => toast("Ups, Algo deu errado!");
 
   const { t, lang } = useTranslation("common");
 
@@ -59,15 +62,12 @@ const SubmitForm: React.FC = () => {
   });
 
   const sendPDF = async (data: any) => {
-    const res = await fetch("/api/sendEmail", {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify(data),
-    })
+    saveUserData(data)
       .then(() => {
         reset();
+        fetch('/static/docs/survey-report.pdf')
+        .then((res) =>  res.blob())
+        .then((file: any) => downloadFile(file))
         success();
       })
       .catch(() => {
