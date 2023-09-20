@@ -11,34 +11,8 @@ import "react-toastify/dist/ReactToastify.css";
 import useTranslation from "next-translate/useTranslation";
 
 import { downloadSurvey, saveUserData } from '@/utils'
-const { t, lang } = useTranslation("common");
 
-const submitFormDataSchema = z.object({
-  email: z
-    .string()
-    .nonempty(t("email"))
-    .toLowerCase()
-    .email(t("errorEmail")),
-  firstName: z
-    .string()
-    .nonempty(t("firstName"))
-    .min(3, t("charNr")),
-  lastName: z
-    .string()
-    .nonempty(t("lastName"))
-    .min(3, t("charNr")),
-  companyOrUniversityName: z
-    .string()
-    .nonempty(t("companyOrUniversityName"))
-    .min(3, t("charNr")),
-  jobOrCourseTitle: z
-    .string()
-    .nonempty(t("jobOrCourseTitle"))
-    .min(3, t("charNr")),
-  province: z.string().nonempty(t("province")),
-});
 
-type SubmitFormData = z.infer<typeof submitFormDataSchema>;
 const style = {
   main: "flex flex-col text-center w-full lg:max-w-[250px] group",
   input:
@@ -46,11 +20,38 @@ const style = {
 };
 
 const SubmitForm: React.FC = () => {
-  const [visible, setVisible] = useState(false);
-  const success = () => toast(t("downloadMessage"), { theme: "colored" });
-  const failed = () => toast(t("errorDownlaod"));
-
   const { t, lang } = useTranslation("common");
+  const [visible, setVisible] = useState(false);
+  const submitFormDataSchema = z.object({
+    email: z
+      .string()
+      .nonempty(t("email"))
+      .toLowerCase()
+      .email(t("errorEmail")),
+    firstName: z
+      .string()
+      .nonempty(t("firstName"))
+      .min(3, t("charNr")),
+    lastName: z
+      .string()
+      .nonempty(t("lastName"))
+      .min(3, t("charNr")),
+    companyOrUniversityName: z
+      .string()
+      .nonempty(t("companyOrUniversityName"))
+      .min(3, t("charNr")),
+    jobOrCourseTitle: z
+      .string()
+      .nonempty(t("jobOrCourseTitle"))
+      .min(3, t("charNr")),
+    province: z.string().nonempty(t("province")),
+  });
+
+  type SubmitFormData = z.infer<typeof submitFormDataSchema>;
+
+  const success = () => toast(t("downloadMessage") as any, { theme: "colored" });
+  const failed = () => toast(t("errorDownlaod") as any);
+
 
   const {
     register,
