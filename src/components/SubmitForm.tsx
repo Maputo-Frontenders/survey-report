@@ -11,7 +11,6 @@ import "react-toastify/dist/ReactToastify.css";
 import useTranslation from "next-translate/useTranslation";
 
 import { downloadSurvey, saveUserData } from '@/utils'
-const { t, lang } = useTranslation("common");
 
 const submitFormDataSchema = z.object({
   email: z
