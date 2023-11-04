@@ -30,6 +30,7 @@ const NavBar: React.FC = () => {
     },
   ];
 
+
   useEffect(() => {
     document.querySelector("body")?.classList.remove("overflow-y-hidden");
     window.addEventListener("scroll", () => {
@@ -40,7 +41,8 @@ const NavBar: React.FC = () => {
   const handleLanguageChange = (event: any) => {
     const selectedLanguage = event.target.value;
 
-    router.push(`?lang=${selectedLanguage}`);
+
+    router.push(`/${selectedLanguage}`);
   };
 
   return (
@@ -70,6 +72,7 @@ const NavBar: React.FC = () => {
             <nav className="flex gap-5">
               <ul className="flex items-center gap-5 text-sm">
                 {menuItems.map((menuItem) => {
+
                   return (
                     <li key={menuItem.href} className="w-max">
                       <Link
@@ -86,6 +89,7 @@ const NavBar: React.FC = () => {
               <select
                 className={`bg-transparent  outline-none text-sm rounded-lg  block w-full p-2.5 `}
                 onChange={handleLanguageChange}
+                value={lang}
               >
                 {languanges.map((languange) => {
                   return (
@@ -93,6 +97,7 @@ const NavBar: React.FC = () => {
                       className="text-black"
                       key={languange.name}
                       value={languange.locale}
+                      selected={languange.locale == lang}
                     >
                       {languange.name}
                     </option>
