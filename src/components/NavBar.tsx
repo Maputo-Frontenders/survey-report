@@ -97,7 +97,6 @@ const NavBar: React.FC = () => {
                       className="text-black"
                       key={languange.name}
                       value={languange.locale}
-                      selected={languange.locale == lang}
                     >
                       {languange.name}
                     </option>
