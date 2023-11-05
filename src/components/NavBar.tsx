@@ -30,6 +30,7 @@ const NavBar: React.FC = () => {
     },
   ];
 
+
   useEffect(() => {
     document.querySelector("body")?.classList.remove("overflow-y-hidden");
     window.addEventListener("scroll", () => {
@@ -39,19 +40,19 @@ const NavBar: React.FC = () => {
 
   const handleLanguageChange = (event: any) => {
     const selectedLanguage = event.target.value;
-    router.push(`/pt?lang=${selectedLanguage}`);
+
+
+    router.push(`/${selectedLanguage}`);
   };
 
   return (
     <header
-      className={`p-5 transition-colors duration-700 fixed z-50 right-0 left-0 top-0 ${
-        scrollY > 200 ? "text-black bg-white shadow" : "text-white"
-      }`}
+      className={`p-5 transition-colors duration-700 fixed z-50 right-0 left-0 top-0 ${scrollY > 200 ? "text-black bg-white shadow" : "text-white"
+        }`}
     >
       <div
-        className={`w-full bg-black/60 right-0 top-0 h-screen ${
-          isMenuOpen ? "absolute z-20 w-screen" : "hidden w-0"
-        }`}
+        className={`w-full bg-black/60 right-0 top-0 h-screen ${isMenuOpen ? "absolute z-20 w-screen" : "hidden w-0"
+          }`}
       ></div>
 
       <div className="max-w-6xl mx-auto">
@@ -71,6 +72,7 @@ const NavBar: React.FC = () => {
             <nav className="flex gap-5">
               <ul className="flex items-center gap-5 text-sm">
                 {menuItems.map((menuItem) => {
+
                   return (
                     <li key={menuItem.href} className="w-max">
                       <Link
@@ -87,6 +89,7 @@ const NavBar: React.FC = () => {
               <select
                 className={`bg-transparent  outline-none text-sm rounded-lg  block w-full p-2.5 `}
                 onChange={handleLanguageChange}
+                value={lang}
               >
                 {languanges.map((languange) => {
                   return (
@@ -126,9 +129,8 @@ const NavBar: React.FC = () => {
           />
 
           <div
-            className={`absolute z-30 flex text-base right-0 top-0 transition-transform duration-700 ${
-              isMenuOpen ? "translate-x-0" : "translate-x-full"
-            }`}
+            className={`absolute z-30 flex text-base right-0 top-0 transition-transform duration-700 ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+              }`}
           >
             <div className="bg-white h-screen w-full max-w-xs min-w-[300px] p-8 text-black">
               <div className="flex gap-3 justify-between items-center">
