@@ -16,10 +16,10 @@ export default function RootLayout({
   return (
     <html lang={lang}>
       <head>
-      <link rel='icon' href='/favicon.ico'/>
+        <link rel='icon' href='/favicon.ico' />
       </head>
       <body className='bg-home overflow-x-hidden'>
-        { children }
+        {children}
       </body>
     </html>
   )
