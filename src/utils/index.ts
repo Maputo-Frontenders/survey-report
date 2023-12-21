@@ -1,30 +1,3 @@
-import supabase from "@/lib/supabase";
-const saveUserData = async (data: any) => {
-  try {
-    const { data: res, error } = await supabase
-      .from("users_data")
-      .insert([
-        {
-          name: data.firstName,
-          email: data.email,
-          surname: data.lastName,
-          instituitionName: data.companyOrUniversityName,
-          role: data.jobOrCourseTitle,
-          residence: data.province,
-        },
-      ])
-      .select();
-
-    if (error) {
-      throw new Error(JSON.stringify(error));
-    }
-
-    return true;
-  } catch (error) {
-    throw new Error(JSON.stringify(error));
-  }
-};
-
 function downloadSurvey(url: string) {
   const anchor = document.createElement("a");
   anchor.style.display = "none";
@@ -39,4 +12,4 @@ function downloadSurvey(url: string) {
   document.body.removeChild(anchor);
 }
 
-export { saveUserData, downloadSurvey };
+export { downloadSurvey };
